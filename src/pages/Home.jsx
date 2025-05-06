@@ -2,10 +2,9 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import HeroSection from '../components/Sections/HeroSection';
-import AboutSection from '../components/Sections/AboutSection';
-import DivisionsSection from '../components/Sections/DivisionsSection';
-import AchievementsSection from '../components/Sections/AchievementsSection';
-import BukuPutihSection from '../components/Sections/BukuPutihSection';
+import PresidentSection from '../components/Sections/PresidentSection';
+import EventsSection from '../components/Sections/EventsSection';
+import PartnersSection from '../components/Sections/PartnersSection';
 
 const Home = () => {
   useEffect(() => {
@@ -16,10 +15,9 @@ const Home = () => {
   return (
     <main>
       <HeroSection />
-      <AboutSection />
-      <DivisionsSection />
-      <AchievementsSection />
-      <BukuPutihSection />
+      <PresidentSection />
+      <EventsSection />
+      <PartnersSection />
     </main>
   );
 };

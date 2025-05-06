@@ -1,4 +1,4 @@
-// src/components/Sections/HeroSection.jsx
+// src/components/Sections/AboutHeroSection.jsx
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/src/assets/images/hero-bg.jpg" 
+          src="/src/assets/images/about-hero-bg.jpg" 
           alt="AMSA Group" 
           className="w-full h-full object-cover"
         />

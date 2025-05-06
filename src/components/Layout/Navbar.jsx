@@ -28,15 +28,15 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src="/src/assets/images/logo.png" alt="AMSA Logo" className="h-10" />
-          <span className={`ml-2 font-bold text-xl ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
-            AMSA
-          </span>
+          <img src="/src/assets/images/logo.png" alt="AMSA Logo" className="h-12" />
+          <div className="ml-2 font-bold text-xl">
+            <p className={`${isScrolled ? 'text-gray-800' : 'text-white'}`}>AMSA-</p>
+            <p className={`text-sm ${isScrolled ? 'text-gray-600' : 'text-white'}`}>Universitas Indonesia</p>
+          </div>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <NavLink to="/" label="Home" isScrolled={isScrolled} />
           <NavLink to="/about" label="About Us" isScrolled={isScrolled} />
           <NavLink to="/divisions" label="Divisions" isScrolled={isScrolled} />
           <NavLink to="/achievements" label="Achievements" isScrolled={isScrolled} />
@@ -68,7 +68,6 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-2">
-            <MobileNavLink to="/" label="Home" onClick={() => setIsMenuOpen(false)} />
             <MobileNavLink to="/about" label="About Us" onClick={() => setIsMenuOpen(false)} />
             <MobileNavLink to="/divisions" label="Divisions" onClick={() => setIsMenuOpen(false)} />
             <MobileNavLink to="/achievements" label="Achievements" onClick={() => setIsMenuOpen(false)} />
@@ -84,7 +83,7 @@ const Navbar = () => {
 const NavLink = ({ to, label, isScrolled }) => (
   <Link 
     to={to} 
-    className={`font-medium hover:text-blue-500 transition-colors ${
+    className={`font-medium hover:text-green-500 transition-colors ${
       isScrolled ? 'text-gray-800' : 'text-white'
     }`}
   >
@@ -96,7 +95,7 @@ const NavLink = ({ to, label, isScrolled }) => (
 const MobileNavLink = ({ to, label, onClick }) => (
   <Link 
     to={to} 
-    className="block py-2 text-gray-800 hover:text-blue-500 font-medium border-b border-gray-200 last:border-0"
+    className="block py-2 text-gray-800 hover:text-green-500 font-medium border-b border-gray-200 last:border-0"
     onClick={onClick}
   >
     {label}
