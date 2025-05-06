@@ -30,7 +30,7 @@ const AboutSection = () => {
               <div data-aos="fade-left" data-aos-delay="200">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
                   The Asian Medical Students' Association
-                </h3>
+            </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   AMSA is a non-political, non-religious organization established with an objective 
                   to promote the well-being of medical students across Asia. We focus on achieving 

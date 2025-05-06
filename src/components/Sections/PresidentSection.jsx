@@ -5,7 +5,7 @@ const PresidentSection = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-center text-2xl font-semibold text-gray-800 mb-8">
+            <h2 className="text-center text-2xl font-semibold text-[#74928A] mb-8">
               Hi, People of Tomorrow!
             </h2>
             
@@ -51,7 +51,7 @@ const PresidentSection = () => {
                     This website is here to update our members and welcome new partners to connect and collaborate with us. I hope this platform can serve as a brief introduction of AMSA-UI. If you have any questions, feel free to reach out using the contact info provided.
                   </p>
                   
-                  <div className="pt-4">
+                  <div className="pt-4 text-[#74928A]">
                     <p>Best Regards,</p>
                     <p>TogetherWeGrow</p>
                     <p>VIVA AMSA</p>

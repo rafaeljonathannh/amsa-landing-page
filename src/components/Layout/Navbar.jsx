@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+      isScrolled ? 'bg-white shadow-md py-2' : 'bg-[#184A3C] py-4'
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
@@ -36,7 +36,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-8">
           <NavLink to="/about" label="About Us" isScrolled={isScrolled} />
           <NavLink to="/divisions" label="Divisions" isScrolled={isScrolled} />
           <NavLink to="/achievements" label="Achievements" isScrolled={isScrolled} />
@@ -83,8 +83,10 @@ const Navbar = () => {
 const NavLink = ({ to, label, isScrolled }) => (
   <Link 
     to={to} 
-    className={`font-medium hover:text-green-500 transition-colors ${
-      isScrolled ? 'text-gray-800' : 'text-white'
+    className={`font-[Schibsted Grotesk] hover:text-green-500 transition-colors ${
+      isScrolled 
+        ? 'text-[#184A3C]'  // Color and font when scrolled
+        : 'text-white'  // Default color when not scrolled
     }`}
   >
     {label}
