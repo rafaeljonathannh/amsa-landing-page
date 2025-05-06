@@ -20,21 +20,20 @@ const PresidentSection = () => {
                       alt="Josh Melvern Arelian" 
                       className="w-full rounded-lg shadow-lg"
                     />
-                    <div className="mt-4 text-center">
-                      <h3 className="text-xl font-medium text-gray-800">Josh Melvern Arelian</h3>
-                    </div>
                   </div>
+                </div>
+                <div className="mt-4 text-center">
+                  <h3 className="text-xl font-medium text-gray-800">Josh Melvern Arelian</h3>
+                </div>
+                <div className="flex justify-center mt-2">
+                  <div className="italic mr-2">AMSA-UI</div>
+                  <div className="font-semibold">Representatium</div>
+                  <div className="ml-2">2024/2025</div>
                 </div>
               </div>
               
               {/* Text content */}
               <div className="md:w-2/3">
-                <div className="flex items-center mb-8">
-                  <h3 className="text-xl font-bold text-gray-800 mr-4">AMSA-UI</h3>
-                  <div className="italic text-lg font-light text-gray-600">Representatium</div>
-                  <div className="ml-4 px-3 py-1 bg-gray-200 rounded-full text-sm">2024/2025</div>
-                </div>
-                
                 <div className="space-y-4 text-gray-700">
                   <p>
                     Since 1986, AMSA-Universitas Indonesia has grown into one of the leading medical student organizations in the country. As a proud chapter of AMSA-Indonesia, we've worked with many institutions to make meaningful contributions to society.

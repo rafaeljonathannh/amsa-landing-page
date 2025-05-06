@@ -71,7 +71,7 @@ const PartnersSection = () => {
                 
                 <div className="text-center md:text-right">
                   <p className="text-gray-700 mb-4">Follow us for latest updates</p>
-                  <a href="#" className="inline-block p-2 bg-white rounded-full shadow-md mb-6">
+                  <a href="https://instagram.com/amsa-ui" className="inline-block p-2 bg-white rounded-full shadow-md mb-6">
                     <img 
                       src="/src/assets/images/icon-instagram.png" 
                       alt="Instagram" 

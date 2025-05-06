@@ -1,6 +1,7 @@
 // src/pages/AboutUs.jsx
 import { useEffect } from 'react';
 import AOS from 'aos';
+import AboutHeroSection from '../components/Sections/AboutHeroSection';
 import PresidentSection from '../components/Sections/PresidentSection';
 import EventsSection from '../components/Sections/EventsSection';
 import PartnersSection from '../components/Sections/PartnersSection';
@@ -12,12 +13,12 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <main>
-      <HeroSection />
+    <div className="pt-20">
+      <AboutHeroSection />
       <PresidentSection />
       <EventsSection />
       <PartnersSection />
-    </main>
+    </div>
   );
 };
 
