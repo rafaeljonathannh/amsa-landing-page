@@ -14,14 +14,14 @@ const PresidentSection = () => {
               <div className="md:w-1/3">
                 <div className="relative">
                   <div className="absolute -top-4 -left-4 w-full h-full border-2 border-green-600 rounded-lg"></div>
-                  <div className="relative z-10">
-                    <img 
-                      src="/src/assets/images/president.jpg" 
-                      alt="Josh Melvern Arelian" 
-                      className="w-full rounded-lg shadow-lg"
-                    />
+                    <div className="relative z-10">
+                      <img 
+                        src="/src/assets/images/president.jpg" 
+                        alt="Josh Melvern Arelian" 
+                        className="w-full rounded-lg shadow-lg"
+                      />
+                    </div>
                   </div>
-                </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-xl font-medium text-gray-800">Josh Melvern Arelian</h3>
                 </div>
