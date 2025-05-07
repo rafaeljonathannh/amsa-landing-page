@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src="/src/assets/images/logo.png" alt="AMSA Logo" className="h-12" />
+          <img src="/src/assets/images/logo2.png" alt="AMSA Logo" className="h-12" />
           <div className="ml-2 font-bold text-xl">
             <p className={`${isScrolled ? 'text-gray-800' : 'text-white'}`}>AMSA-</p>
             <p className={`text-sm ${isScrolled ? 'text-gray-600' : 'text-white'}`}>Universitas Indonesia</p>
