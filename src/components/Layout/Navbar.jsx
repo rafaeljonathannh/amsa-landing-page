@@ -1,25 +1,37 @@
 // src/components/Layout/Navbar.jsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const divisionsRef = useRef(null);
+
+  // Division data
+  const divisions = [
+    { id: 'academics', title: 'Academics' },
+    { id: 'exchange', title: 'Asian Medical Students Exchange Program' },
+    { id: 'outreach', title: 'Community Outreach' },
+    { id: 'membership', title: 'Membership and Development' },
+    { id: 'relations', title: 'Public Relation and Delegation' },
+    { id: 'publication', title: 'Publication and Promotion' },
+    { id: 'recruitment', title: 'Recruitment' },
+  ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+    // Close dropdown when clicking outside
+    const handleClickOutside = (event) => {
+      if (divisionsRef.current && !divisionsRef.current.contains(event.target)) {
+        setIsDivisionsOpen(false);
       }
     };
-
-    window.addEventListener('scroll', handleScroll);
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
@@ -27,7 +39,7 @@ const Navbar = () => {
   const handleNavigation = (e, path) => {
     // If clicking the link for the current page
     if (location.pathname === path) {
-      e.preventDefault(); // Prevent default navigation
+      e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -35,21 +47,17 @@ const Navbar = () => {
     }
   };
 
-  // Handle logo click to navigate to home and scroll to top
+  // Handle logo click
   const handleLogoClick = (e) => {
     e.preventDefault();
     
-    // If already on homepage, just scroll to top
     if (location.pathname === '/') {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-    } 
-    // If on another page, navigate to home then scroll to top
-    else {
+    } else {
       navigate('/');
-      // We need to wait for navigation to complete
       setTimeout(() => {
         window.scrollTo({
           top: 0,
@@ -59,57 +67,105 @@ const Navbar = () => {
     }
   };
 
+  // Toggle divisions dropdown for mobile
+  const toggleDivisions = () => {
+    setIsDivisionsOpen(!isDivisionsOpen);
+  };
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md py-2' : 'bg-[#184A3C] py-4'
-    }`}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
-        <a 
-          href="/" 
-          className="flex items-center cursor-pointer"
-          onClick={handleLogoClick}
-        >
-          <div className="w-16 flex items-center justify-center">
-            <img 
-              src={isScrolled ? "/src/assets/images/logo-colored.png" : "/src/assets/images/logo-white.png"} 
-              alt="AMSA Logo" 
-              className={`${isScrolled ? 'h-14' : 'h-12'} w-auto object-contain`} 
-            />
-          </div>
-          <div className="ml-2">
-            <p className={`font-bold text-xl ${isScrolled ? 'text-gray-800' : 'text-white'}`}>AMSA-</p>
-            <p className={`text-sm ${isScrolled ? 'text-gray-600' : 'text-white'}`}>Universitas Indonesia</p>
-          </div>
-        </a>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          <NavLink to="/about" label="About Us" isScrolled={isScrolled} handleNavigation={handleNavigation} />
-          <NavLink to="/divisions" label="Divisions" isScrolled={isScrolled} handleNavigation={handleNavigation} />
-          <NavLink to="/achievements" label="Achievements" isScrolled={isScrolled} handleNavigation={handleNavigation} />
-          <NavLink to="/buku-putih" label="Buku Putih" isScrolled={isScrolled} handleNavigation={handleNavigation} />
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <svg 
-            className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24" 
-            xmlns="http://www.w3.org/2000/svg"
+    <nav className="fixed w-full z-50 bg-[#184A3C]">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <a 
+            href="/" 
+            className="flex items-center cursor-pointer"
+            onClick={handleLogoClick}
           >
-            {isMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
+            <div className="w-12 flex items-center justify-center">
+              <img 
+                src="/src/assets/images/logo-white.png" 
+                alt="AMSA Logo" 
+                className="h-10 w-auto object-contain" 
+              />
+            </div>
+            <div className="ml-2">
+              <p className="font-bold text-xl text-white">AMSA-</p>
+              <p className="text-sm text-white">Universitas Indonesia</p>
+            </div>
+          </a>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <NavLink to="/about" label="About Us" handleNavigation={handleNavigation} />
+            
+            {/* Divisions dropdown - Hanya dengan panah tanpa background */}
+            <div className="relative" ref={divisionsRef}>
+              <button
+                className="flex items-center text-white hover:text-gray-300 transition-colors"
+                onMouseEnter={() => setIsDivisionsOpen(true)}
+                onClick={toggleDivisions}
+              >
+                <span>Divisions</span>
+                <svg 
+                  className="w-5 h-5 ml-1" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {/* Dropdown menu for Divisions */}
+              <div 
+                className={`absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-300 transform origin-top ${
+                  isDivisionsOpen 
+                    ? 'opacity-100 scale-y-100' 
+                    : 'opacity-0 scale-y-0 pointer-events-none'
+                }`}
+                onMouseLeave={() => setIsDivisionsOpen(false)}
+              >
+                <div className="py-2">
+                  {divisions.map((division) => (
+                    <Link
+                      key={division.id}
+                      to={`/divisions/${division.id}`}
+                      className="block px-4 py-2 text-[#184A3C] hover:bg-[#6E9277] hover:bg-opacity-20 transition-colors"
+                      onClick={() => setIsDivisionsOpen(false)}
+                    >
+                      {division.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <NavLink to="/achievements" label="Achievements" handleNavigation={handleNavigation} />
+            <NavLink to="/buku-putih" label="Buku Putih" handleNavigation={handleNavigation} />
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden focus:outline-none text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg 
+              className="w-6 h-6" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -117,7 +173,45 @@ const Navbar = () => {
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-2">
             <MobileNavLink to="/about" label="About Us" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
-            <MobileNavLink to="/divisions" label="Divisions" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
+            
+            {/* Mobile Divisions dropdown */}
+            <div className="py-2 text-gray-800 border-b border-gray-200">
+              <button 
+                className="flex items-center justify-between w-full text-left font-medium hover:text-green-500"
+                onClick={toggleDivisions}
+              >
+                <span>Divisions</span>
+                <svg 
+                  className={`w-4 h-4 transition-transform ${isDivisionsOpen ? 'transform rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {/* Mobile Divisions submenu */}
+              <div className={`mt-2 transition-all duration-300 overflow-hidden ${
+                isDivisionsOpen ? 'max-h-96' : 'max-h-0'
+              }`}>
+                {divisions.map((division) => (
+                  <Link
+                    key={division.id}
+                    to={`/divisions/${division.id}`}
+                    className="block pl-4 py-2 text-gray-700 hover:text-green-500"
+                    onClick={() => {
+                      setIsDivisionsOpen(false);
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    {division.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
             <MobileNavLink to="/achievements" label="Achievements" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
             <MobileNavLink to="/buku-putih" label="Buku Putih" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
           </div>
@@ -128,14 +222,10 @@ const Navbar = () => {
 };
 
 // Desktop NavLink Component
-const NavLink = ({ to, label, isScrolled, handleNavigation }) => (
+const NavLink = ({ to, label, handleNavigation }) => (
   <Link 
     to={to} 
-    className={`font-[Schibsted Grotesk] hover:text-green-500 transition-colors ${
-      isScrolled 
-        ? 'text-[#184A3C]'
-        : 'text-white'
-    }`}
+    className="text-white hover:text-gray-300 transition-colors"
     onClick={(e) => handleNavigation(e, to)}
   >
     {label}
