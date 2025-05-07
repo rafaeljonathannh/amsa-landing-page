@@ -52,26 +52,28 @@ const Navbar = () => {
       isScrolled ? 'bg-white shadow-md py-2' : 'bg-[#184A3C] py-4'
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo - Now with custom click handler */}
+        {/* Logo - dengan ukuran yang lebih besar */}
         <a 
           href="/" 
           className="flex items-center cursor-pointer"
           onClick={handleLogoClick}
         >
-          <img 
-            src={isScrolled ? "/src/assets/images/logo-colored.png" : "/src/assets/images/logo-white.png"} 
-            alt="AMSA Logo" 
-            className="h-12" 
-          />
-          <div className="ml-2 font-bold text-xl">
-            <p className={`${isScrolled ? 'text-gray-800' : 'text-white'}`}>AMSA-</p>
+          {/* Fixed dimensions container with larger width */}
+          <div className="w-16 flex items-center justify-center">
+            <img 
+              src={isScrolled ? "/src/assets/images/logo-colored.png" : "/src/assets/images/logo-white.png"} 
+              alt="AMSA Logo" 
+              className={`${isScrolled ? 'h-14' : 'h-12'} w-auto object-contain`} 
+            />
+          </div>
+          <div className="ml-2">
+            <p className={`font-bold text-xl ${isScrolled ? 'text-gray-800' : 'text-white'}`}>AMSA-</p>
             <p className={`text-sm ${isScrolled ? 'text-gray-600' : 'text-white'}`}>Universitas Indonesia</p>
           </div>
         </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          {/* About link now just uses normal Link without custom handler */}
           <Link 
             to="/about" 
             className={`font-[Schibsted Grotesk] hover:text-green-500 transition-colors ${
@@ -112,7 +114,6 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-2">
-            {/* Modify mobile About link too */}
             <Link 
               to="/about" 
               className="block py-2 text-gray-800 hover:text-green-500 font-medium border-b border-gray-200"

@@ -19,13 +19,13 @@ const HeroSection = () => {
       {/* Blurred bottom border */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10"></div>
       
-      {/* Content */}
-      <div className="container mx-auto px-4 relative z-20 flex justify-center">
-        <div className="text-center" data-aos="fade-up">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-wider text-white">
-            AMSA-UI
-          </h1>
-        </div>
+      {/* Together We Grow logo di kiri atas sesuai mockup */}
+      <div className="absolute top-36 left-24 z-20">
+        <img 
+          src="/src/assets/images/together-we-grow.png" 
+          alt="Together We Grow" 
+          className="h-7"
+        />
       </div>
       
       {/* Scroll down indicator */}
