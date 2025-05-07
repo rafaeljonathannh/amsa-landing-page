@@ -23,6 +23,18 @@ const Navbar = () => {
     };
   }, []);
 
+  // Handle navigation, with scroll to top for same-page links
+  const handleNavigation = (e, path) => {
+    // If clicking the link for the current page
+    if (location.pathname === path) {
+      e.preventDefault(); // Prevent default navigation
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   // Handle logo click to navigate to home and scroll to top
   const handleLogoClick = (e) => {
     e.preventDefault();
@@ -52,13 +64,12 @@ const Navbar = () => {
       isScrolled ? 'bg-white shadow-md py-2' : 'bg-[#184A3C] py-4'
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo - dengan ukuran yang lebih besar */}
+        {/* Logo */}
         <a 
           href="/" 
           className="flex items-center cursor-pointer"
           onClick={handleLogoClick}
         >
-          {/* Fixed dimensions container with larger width */}
           <div className="w-16 flex items-center justify-center">
             <img 
               src={isScrolled ? "/src/assets/images/logo-colored.png" : "/src/assets/images/logo-white.png"} 
@@ -74,19 +85,10 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <Link 
-            to="/about" 
-            className={`font-[Schibsted Grotesk] hover:text-green-500 transition-colors ${
-              isScrolled 
-                ? 'text-[#184A3C]'  // Color when scrolled
-                : 'text-white'  // Default color when not scrolled
-            }`}
-          >
-            About Us
-          </Link>
-          <NavLink to="/divisions" label="Divisions" isScrolled={isScrolled} />
-          <NavLink to="/achievements" label="Achievements" isScrolled={isScrolled} />
-          <NavLink to="/buku-putih" label="Buku Putih" isScrolled={isScrolled} />
+          <NavLink to="/about" label="About Us" isScrolled={isScrolled} handleNavigation={handleNavigation} />
+          <NavLink to="/divisions" label="Divisions" isScrolled={isScrolled} handleNavigation={handleNavigation} />
+          <NavLink to="/achievements" label="Achievements" isScrolled={isScrolled} handleNavigation={handleNavigation} />
+          <NavLink to="/buku-putih" label="Buku Putih" isScrolled={isScrolled} handleNavigation={handleNavigation} />
         </div>
 
         {/* Mobile Menu Button */}
@@ -114,16 +116,10 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-2">
-            <Link 
-              to="/about" 
-              className="block py-2 text-gray-800 hover:text-green-500 font-medium border-b border-gray-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <MobileNavLink to="/divisions" label="Divisions" onClick={() => setIsMenuOpen(false)} />
-            <MobileNavLink to="/achievements" label="Achievements" onClick={() => setIsMenuOpen(false)} />
-            <MobileNavLink to="/buku-putih" label="Buku Putih" onClick={() => setIsMenuOpen(false)} />
+            <MobileNavLink to="/about" label="About Us" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
+            <MobileNavLink to="/divisions" label="Divisions" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
+            <MobileNavLink to="/achievements" label="Achievements" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
+            <MobileNavLink to="/buku-putih" label="Buku Putih" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
           </div>
         </div>
       )}
@@ -132,25 +128,29 @@ const Navbar = () => {
 };
 
 // Desktop NavLink Component
-const NavLink = ({ to, label, isScrolled }) => (
+const NavLink = ({ to, label, isScrolled, handleNavigation }) => (
   <Link 
     to={to} 
     className={`font-[Schibsted Grotesk] hover:text-green-500 transition-colors ${
       isScrolled 
-        ? 'text-[#184A3C]'  // Color when scrolled
-        : 'text-white'  // Default color when not scrolled
+        ? 'text-[#184A3C]'
+        : 'text-white'
     }`}
+    onClick={(e) => handleNavigation(e, to)}
   >
     {label}
   </Link>
 );
 
 // Mobile NavLink Component
-const MobileNavLink = ({ to, label, onClick }) => (
+const MobileNavLink = ({ to, label, onClick, handleNavigation }) => (
   <Link 
     to={to} 
     className="block py-2 text-gray-800 hover:text-green-500 font-medium border-b border-gray-200 last:border-0"
-    onClick={onClick}
+    onClick={(e) => {
+      onClick();
+      handleNavigation(e, to);
+    }}
   >
     {label}
   </Link>
