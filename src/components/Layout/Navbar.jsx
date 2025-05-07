@@ -1,11 +1,12 @@
 // src/components/Layout/Navbar.jsx
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,17 +23,27 @@ const Navbar = () => {
     };
   }, []);
 
-  // Function to handle About Us link click
-  const handleAboutClick = (e) => {
-    // If already on the about page, prevent default navigation
-    if (location.pathname === '/about') {
-      e.preventDefault();
-      
-      // Find the President Section element and scroll to it
-      const presidentSection = document.getElementById('president-section');
-      if (presidentSection) {
-        presidentSection.scrollIntoView({ behavior: 'smooth' });
-      }
+  // Handle logo click to navigate to home and scroll to top
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    
+    // If already on homepage, just scroll to top
+    if (location.pathname === '/') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } 
+    // If on another page, navigate to home then scroll to top
+    else {
+      navigate('/');
+      // We need to wait for navigation to complete
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
     }
   };
 
@@ -41,8 +52,12 @@ const Navbar = () => {
       isScrolled ? 'bg-white shadow-md py-2' : 'bg-[#184A3C] py-4'
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="flex items-center">
+        {/* Logo - Now with custom click handler */}
+        <a 
+          href="/" 
+          className="flex items-center cursor-pointer"
+          onClick={handleLogoClick}
+        >
           <img 
             src={isScrolled ? "/src/assets/images/logo-colored.png" : "/src/assets/images/logo-white.png"} 
             alt="AMSA Logo" 
@@ -52,11 +67,11 @@ const Navbar = () => {
             <p className={`${isScrolled ? 'text-gray-800' : 'text-white'}`}>AMSA-</p>
             <p className={`text-sm ${isScrolled ? 'text-gray-600' : 'text-white'}`}>Universitas Indonesia</p>
           </div>
-        </Link>
+        </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          {/* Modify the About link to use our custom click handler */}
+          {/* About link now just uses normal Link without custom handler */}
           <Link 
             to="/about" 
             className={`font-[Schibsted Grotesk] hover:text-green-500 transition-colors ${
@@ -64,7 +79,6 @@ const Navbar = () => {
                 ? 'text-[#184A3C]'  // Color when scrolled
                 : 'text-white'  // Default color when not scrolled
             }`}
-            onClick={handleAboutClick}
           >
             About Us
           </Link>
@@ -102,10 +116,7 @@ const Navbar = () => {
             <Link 
               to="/about" 
               className="block py-2 text-gray-800 hover:text-green-500 font-medium border-b border-gray-200"
-              onClick={(e) => {
-                handleAboutClick(e);
-                setIsMenuOpen(false);
-              }}
+              onClick={() => setIsMenuOpen(false)}
             >
               About Us
             </Link>

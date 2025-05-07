@@ -1,9 +1,9 @@
 // src/pages/AboutUs.jsx
 import { useEffect } from 'react';
 import AOS from 'aos';
-import PresidentSection from '../components/Sections/PresidentSection';
-import EventsSection from '../components/Sections/EventsSection';
-import PartnersSection from '../components/Sections/PartnersSection';
+import AboutHeroSection from '../components/Sections/AboutHeroSection';
+import VisionMissionSection from '../components/Sections/VisionMissionSection';
+import OrganogramSection from '../components/Sections/OrganogramSection';
 
 const AboutUs = () => {
   useEffect(() => {
@@ -12,11 +12,10 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="pt-20">
-      {/* Start with President Section */}
-      <PresidentSection />
-      <EventsSection />
-      <PartnersSection />
+    <div className="pt-16">
+      <AboutHeroSection />
+      <VisionMissionSection />
+      <OrganogramSection />
     </div>
   );
 };

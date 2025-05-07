@@ -82,3 +82,8 @@ body {
 }
 
 /* Tambahkan custom styles spesifik aplikasi di sini */
+
+.font-script {
+  font-family: 'Playfair Display', serif; /* Atau font script lain yang sesuai */
+  font-style: italic;
+}
