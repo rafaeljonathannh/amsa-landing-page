@@ -1,7 +1,6 @@
 // src/pages/AboutUs.jsx
 import { useEffect } from 'react';
 import AOS from 'aos';
-import AboutHeroSection from '../components/Sections/AboutHeroSection';
 import PresidentSection from '../components/Sections/PresidentSection';
 import EventsSection from '../components/Sections/EventsSection';
 import PartnersSection from '../components/Sections/PartnersSection';
@@ -14,7 +13,7 @@ const AboutUs = () => {
 
   return (
     <div className="pt-20">
-      <AboutHeroSection />
+      {/* Start with President Section */}
       <PresidentSection />
       <EventsSection />
       <PartnersSection />

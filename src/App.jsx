@@ -1,8 +1,8 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Layout/Navbar';
 import Footer from './components/Layout/Footer';
-import AboutUs from './pages/AboutUs';
+import Home from './pages/Home';
 import Divisions from './pages/Divisions';
 import Achievements from './pages/Achievements';
 import BukuPutih from './pages/BukuPutih';
@@ -14,8 +14,8 @@ function App() {
         <Navbar />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<AboutUs />} />
-            <Route path="/about" element={<AboutUs />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<Home startAtPresident={true} />} />
             <Route path="/divisions" element={<Divisions />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/buku-putih" element={<BukuPutih />} />

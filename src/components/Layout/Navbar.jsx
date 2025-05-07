@@ -1,10 +1,11 @@
 // src/components/Layout/Navbar.jsx
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +22,20 @@ const Navbar = () => {
     };
   }, []);
 
+  // Function to handle About Us link click
+  const handleAboutClick = (e) => {
+    // If already on the about page, prevent default navigation
+    if (location.pathname === '/about') {
+      e.preventDefault();
+      
+      // Find the President Section element and scroll to it
+      const presidentSection = document.getElementById('president-section');
+      if (presidentSection) {
+        presidentSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white shadow-md py-2' : 'bg-[#184A3C] py-4'
@@ -28,7 +43,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src="/src/assets/images/logo2.png" alt="AMSA Logo" className="h-12" />
+          <img 
+            src={isScrolled ? "/src/assets/images/logo-colored.png" : "/src/assets/images/logo-white.png"} 
+            alt="AMSA Logo" 
+            className="h-12" 
+          />
           <div className="ml-2 font-bold text-xl">
             <p className={`${isScrolled ? 'text-gray-800' : 'text-white'}`}>AMSA-</p>
             <p className={`text-sm ${isScrolled ? 'text-gray-600' : 'text-white'}`}>Universitas Indonesia</p>
@@ -37,7 +56,18 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <NavLink to="/about" label="About Us" isScrolled={isScrolled} />
+          {/* Modify the About link to use our custom click handler */}
+          <Link 
+            to="/about" 
+            className={`font-[Schibsted Grotesk] hover:text-green-500 transition-colors ${
+              isScrolled 
+                ? 'text-[#184A3C]'  // Color when scrolled
+                : 'text-white'  // Default color when not scrolled
+            }`}
+            onClick={handleAboutClick}
+          >
+            About Us
+          </Link>
           <NavLink to="/divisions" label="Divisions" isScrolled={isScrolled} />
           <NavLink to="/achievements" label="Achievements" isScrolled={isScrolled} />
           <NavLink to="/buku-putih" label="Buku Putih" isScrolled={isScrolled} />
@@ -68,7 +98,17 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-2">
-            <MobileNavLink to="/about" label="About Us" onClick={() => setIsMenuOpen(false)} />
+            {/* Modify mobile About link too */}
+            <Link 
+              to="/about" 
+              className="block py-2 text-gray-800 hover:text-green-500 font-medium border-b border-gray-200"
+              onClick={(e) => {
+                handleAboutClick(e);
+                setIsMenuOpen(false);
+              }}
+            >
+              About Us
+            </Link>
             <MobileNavLink to="/divisions" label="Divisions" onClick={() => setIsMenuOpen(false)} />
             <MobileNavLink to="/achievements" label="Achievements" onClick={() => setIsMenuOpen(false)} />
             <MobileNavLink to="/buku-putih" label="Buku Putih" onClick={() => setIsMenuOpen(false)} />
@@ -85,7 +125,7 @@ const NavLink = ({ to, label, isScrolled }) => (
     to={to} 
     className={`font-[Schibsted Grotesk] hover:text-green-500 transition-colors ${
       isScrolled 
-        ? 'text-[#184A3C]'  // Color and font when scrolled
+        ? 'text-[#184A3C]'  // Color when scrolled
         : 'text-white'  // Default color when not scrolled
     }`}
   >
