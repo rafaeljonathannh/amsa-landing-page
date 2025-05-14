@@ -8,6 +8,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const divisionsRef = useRef(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Division data
   const divisions = [
@@ -72,8 +73,25 @@ const Navbar = () => {
     setIsDivisionsOpen(!isDivisionsOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="fixed w-full z-50 bg-[#184A3C]">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white shadow-md py-2' : 'bg-[#184A3C] py-4'
+    }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -82,16 +100,16 @@ const Navbar = () => {
             className="flex items-center cursor-pointer"
             onClick={handleLogoClick}
           >
-            <div className="w-12 flex items-center justify-center">
+            <div className="w-20 flex items-center justify-center">
               <img 
-                src="/src/assets/images/logo-white.png" 
+                src={isScrolled ? "/src/assets/images/logo-colored.png" : "/src/assets/images/logo-white.png"} 
                 alt="AMSA Logo" 
-                className="h-10 w-auto object-contain" 
+                className={`${isScrolled ? 'h-14' : 'h-12'} w-auto object-contain`} 
               />
             </div>
             <div className="ml-2">
-              <p className="font-bold text-xl text-white">AMSA-</p>
-              <p className="text-sm text-white">Universitas Indonesia</p>
+              <p className={`font-bold text-xl ${isScrolled ? 'text-gray-800' : 'text-white'}`}>AMSA-</p>
+              <p className={`text-sm ${isScrolled ? 'text-gray-600' : 'text-white'}`}>Universitas Indonesia</p>
             </div>
           </a>
 
