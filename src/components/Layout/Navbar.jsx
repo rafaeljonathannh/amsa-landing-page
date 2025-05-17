@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -58,30 +57,23 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Desktop NavLink Component
+// Desktop NavLink Component
 const NavLink = ({ to, label, handleNavigation, isScrolled }) => (
   <Link 
     to={to} 
-    className={`${isScrolled ? 'text-gray-800 hover:text-gray-600' : 'text-white hover:text-gray-300'} transition-colors`}
+    className={`px-4 py-2 rounded-md font-medium border border-transparent transition-colors ${
+      isScrolled 
+        ? 'text-gray-800 hover:text-white hover:bg-[#184A3C]' 
+        : 'text-white hover:text-gray-800 hover:bg-white'
+    }`}
     onClick={(e) => handleNavigation(e, to)}
   >
     {label}
   </Link>
 );
 
-// Mobile NavLink Component
-const MobileNavLink = ({ to, label, onClick, handleNavigation }) => (
-  <Link 
-    to={to} 
-    className="block py-2 text-gray-800 hover:text-green-500 font-medium border-b border-gray-200 last:border-0"
-    onClick={(e) => {
-      onClick();
-      handleNavigation(e, to);
-    }}
-  >
-    {label}
-  </Link>
-);
+
+
 
 return (
   <nav className={`fixed w-full z-50 transition-all duration-300 ${
@@ -111,8 +103,10 @@ return (
           {/* Divisions Dropdown */}
           <div className="relative" ref={divisionsRef}>
             <button
-              className={`flex items-center transition-colors ${
-                isScrolled ? 'text-gray-800 hover:text-gray-600' : 'text-white hover:text-gray-300'
+              className={`flex items-center font-medium px-3 py-2 rounded-md border border-transparent transition-colors ${
+                isScrolled 
+                  ? 'text-gray-800 hover:text-white hover:bg-[#184A3C]' 
+                  : 'text-white hover:text-gray-800 hover:bg-white'
               }`}
               onMouseEnter={() => setIsDivisionsOpen(true)}
               onClick={toggleDivisions}
@@ -146,72 +140,11 @@ return (
 
           <NavLink to="/achievements" label="Achievements" handleNavigation={handleNavigation} isScrolled={isScrolled} />
           <NavLink to="/buku-putih" label="Buku Putih" handleNavigation={handleNavigation} isScrolled={isScrolled} />
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden focus:outline-none text-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {isMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
-      </div>
-
-      {/* Mobile Menu Inside nav */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg mt-4 rounded-lg overflow-hidden">
-          <MobileNavLink to="/about" label="About Us" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
-          
-          {/* Mobile Divisions */}
-          <div className="py-2 text-gray-800 border-b border-gray-200">
-            <button 
-              className="flex items-center justify-between w-full text-left font-medium hover:text-green-500 px-4"
-              onClick={toggleDivisions}
-            >
-              <span>Divisions</span>
-              <svg 
-                className={`w-4 h-4 transition-transform ${isDivisionsOpen ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            <div className={`mt-2 transition-all duration-300 overflow-hidden ${
-              isDivisionsOpen ? 'max-h-96' : 'max-h-0'
-            }`}>
-              {divisions.map((division) => (
-                <Link
-                  key={division.id}
-                  to={`/divisions/${division.id}`}
-                  className="block pl-6 py-2 text-gray-700 hover:text-green-500"
-                  onClick={() => {
-                    setIsDivisionsOpen(false);
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  {division.title}
-                </Link>
-              ))}
-            </div>
           </div>
-
-          <MobileNavLink to="/achievements" label="Achievements" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
-          <MobileNavLink to="/buku-putih" label="Buku Putih" onClick={() => setIsMenuOpen(false)} handleNavigation={handleNavigation} />
         </div>
-      )}
-    </div>
-  </nav>
-);
+      </div>
+    </nav>
+  );
 };
-
 
 export default Navbar;
