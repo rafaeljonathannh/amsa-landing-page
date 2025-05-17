@@ -3,7 +3,7 @@ import React from 'react';
 
 const AboutHeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 to-gray-900 text-white overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -42,10 +42,15 @@ const AboutHeroSection = () => {
         />
       </div>
       
-      {/* Together We Grow small text */}
-      <div className="absolute top-24 left-24 text-white z-10">
-        <p className="text-sm font-light">Together We Grow</p>
+      {/* Together We Grow logo di kiri atas sesuai mockup */}
+      <div className="absolute top-24 left-20 z-20">
+        <img 
+          src="/src/assets/images/together-we-grow.svg" 
+          alt="Together We Grow" 
+          className="h-12"
+        />
       </div>
+      
     </section>
   );
 };

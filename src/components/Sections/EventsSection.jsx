@@ -27,11 +27,16 @@ const EventsSection = () => {
       {/* Whats on amsa ui */}
       <section className="py-16 bg-[#6E9277] bg-opacity-[0.24]">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-center">
-              <span className="text-4xl font-light italic text-gray-600">What's on</span>
-              <span className="text-4xl font-semibold text-green-700 ml-2">AMSA-UI ?</span>
-            </h2>
+          <div className="max-w-6xl mx-auto text-center">
+            
+            {/* SVG Illustration */}
+            <div className="flex justify-center mb-4">
+              <img 
+                src="/src/assets/images/whats-on-amsa.svg" 
+                alt="What's On AMSA" 
+                className="w-85 h-auto md:w-120"
+              />
+            </div>
           </div>
         </div>
       </section>
