@@ -14,7 +14,7 @@ const Footer = () => {
             <p className="text-sm text-[#184A3C]">Universitas Indonesia</p>
           </div>
           <div className="ml-8">
-            <img src="/src/assets/images/together-we-grow-green.png" alt="Together We Grow" className="h-10" />
+            <img src="/src/assets/images/together-we-grow-green.svg" alt="Together We Grow" className="h-10" />
           </div>
         </div>
       </div>

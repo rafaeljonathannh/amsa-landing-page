@@ -42,25 +42,44 @@ const EventsSection = () => {
       </section>
 
     {/* Events Grid */}
-    <section className="py-16">  
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           {events.map((event) => (
-            <div key={event.id} className="bg-white rounded-lg overflow-hidden shadow-md">
-              <img 
-                src={event.image} 
-                alt={event.title} 
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-center font-bold text-gray-800 mb-3">{event.title}</h3>
-                <p className="text-sm text-gray-600 line-clamp-4">
-                  {event.description || "Description coming soon..."}
-                </p>
+            <div
+              key={event.id}
+              className="group relative bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+            >
+              {/* Image container — expands inside itself */}
+              <div className="overflow-hidden h-56">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Description area with fixed height, expands inside card */}
+              <div className="p-6 flex flex-col justify-start">
+                <h3 className="text-center font-semibold text-[#184A3C] text-lg mb-3">
+                  {event.title}
+                </h3>
+
+                {/* Container with max height to prevent layout shift */}
+                <div className="relative overflow-hidden max-h-24 group-hover:max-h-96 transition-all duration-300 ease-in-out">
+                  <p className="text-sm text-gray-600">
+                    {event.description || "Description coming soon..."}
+                  </p>
+
+                  {/* Optional gradient fade if content is long */}
+                  <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-t from-white to-transparent pointer-events-none group-hover:opacity-0 transition-opacity duration-300"></div>
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   );
 };
