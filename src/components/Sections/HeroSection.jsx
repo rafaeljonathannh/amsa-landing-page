@@ -31,6 +31,19 @@ const HeroSection = () => {
         />
       </div>
       
+      {/* AMSA-UI White Logo di tengah */}
+      <div className="relative z-20 text-center">
+        <img 
+          src="/src/assets/images/amsa-ui-white-logo.png" 
+          alt="AMSA-UI Logo" 
+          style={{
+            width: '700px',  // Diubah dari 350px menjadi 700px (2x lipat)
+            height: 'auto',
+            margin: '0 auto'
+          }}
+        />
+      </div>
+      
       {/* Scroll down indicator */}
       <div className="absolute bottom-10 left-0 right-0 flex justify-center z-20">
         <div className="animate-bounce">

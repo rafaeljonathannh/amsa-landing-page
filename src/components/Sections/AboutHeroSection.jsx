@@ -35,7 +35,7 @@ const AboutHeroSection = () => {
           src="/src/assets/images/amsa-ui-white-logo.png" 
           alt="AMSA-UI Logo" 
           style={{
-            width: '350px',
+            width: '750px',
             height: 'auto',
             margin: '0 auto'
           }}
