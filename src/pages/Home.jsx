@@ -1,32 +1,24 @@
-// src/pages/Home.jsx
-import { useEffect, useRef } from 'react';
+// src/pages/Home.jsx - Versi Sederhana
+import { useEffect } from 'react';
 import AOS from 'aos';
 import HeroSection from '../components/Sections/HeroSection';
 import PresidentSection from '../components/Sections/PresidentSection';
 import EventsSection from '../components/Sections/EventsSection';
 import PartnersSection from '../components/Sections/PartnersSection';
 
-const Home = ({ startAtPresident = false }) => {
-  const presidentRef = useRef(null);
-  
+const Home = () => {
   useEffect(() => {
-    // Refresh AOS when component mounts
+    // Refresh AOS when component mounts - ini tetap diperlukan untuk animasi
     AOS.refresh();
     
-    // Scroll to President Section if startAtPresident is true
-    if (startAtPresident && presidentRef.current) {
-      setTimeout(() => {
-        presidentRef.current.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
-  }, [startAtPresident]);
+    // Tidak ada kode scrolling kondisional - halaman selalu dimulai dari atas
+  }, []);
 
   return (
     <main>
       <HeroSection />
-      <div ref={presidentRef}>
-        <PresidentSection />
-      </div>
+      {/* Tidak memerlukan ref karena tidak ada scrolling kondisional */}
+      <PresidentSection />
       <EventsSection />
       <PartnersSection />
     </main>

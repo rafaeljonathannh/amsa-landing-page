@@ -77,4 +77,38 @@ body {
   font-style: italic;
 }
 
+/* Page Transition Animation */
+.transition-page {
+  position: relative;
+  width: 100%;
+}
 
+.fadeIn {
+  animation: 0.4s fadeIn forwards;
+}
+
+.fadeOut {
+  animation: 0.4s fadeOut forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(0, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(0, -20px);
+  }
+}
