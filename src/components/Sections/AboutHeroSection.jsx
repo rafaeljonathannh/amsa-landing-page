@@ -1,12 +1,13 @@
 // src/components/Sections/AboutHeroSection.jsx
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const AboutHeroSection = () => {
   return (
     <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 to-gray-900 text-white overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <motion.img 
           src="/src/assets/images/about-hero.jpg" 
           alt="AMSA Team" 
           className="w-full h-full"
@@ -15,6 +16,9 @@ const AboutHeroSection = () => {
             objectPosition: '30% center',
             filter: 'grayscale(100%) brightness(0.75) sepia(20%) hue-rotate(200deg)',
           }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5 }}
         />
       </div>
       
@@ -30,7 +34,12 @@ const AboutHeroSection = () => {
       ></div>
       
       {/* Center Logo */}
-      <div className="relative z-10 text-center">
+      <motion.div 
+        className="relative z-10 text-center"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
         <img 
           src="/src/assets/images/amsa-ui-white-logo.png" 
           alt="AMSA-UI Logo" 
@@ -40,17 +49,22 @@ const AboutHeroSection = () => {
             margin: '0 auto'
           }}
         />
-      </div>
+      </motion.div>
       
-      {/* Together We Grow logo di kiri atas sesuai mockup */}
-      <div className="absolute top-24 left-20 z-20">
+      {/* Together We Grow logo */}
+      <motion.div 
+        className="absolute top-24 left-20 z-20"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        whileHover={{ scale: 1.05 }}
+      >
         <img 
           src="/src/assets/images/together-we-grow.svg" 
           alt="Together We Grow" 
           className="h-12"
         />
-      </div>
-      
+      </motion.div>
     </section>
   );
 };
