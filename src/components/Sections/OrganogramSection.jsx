@@ -7,7 +7,7 @@ const OrganogramSection = () => {
     <section 
       className="py-16 relative" 
       style={{ 
-        background: 'linear-gradient(to bottom, #6E9277 0%, #6E9277 50%, white 100%)',
+        background: 'linear-gradient(to bottom, #6E9277 20%, #6E9277 0%, white 100%)',
         position: 'relative',
         zIndex: 1
       }}
