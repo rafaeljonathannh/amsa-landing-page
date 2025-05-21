@@ -52,7 +52,7 @@ const EventsSection = ({ events }) => {
                   </p>
 
                    {/* Learn More */}
-                   <div className="text-center">
+                   <div className="text-center mt-8">
                     {event.link && event.description && event.description.length !== 0 && (
                         <a
                           href={event.link}

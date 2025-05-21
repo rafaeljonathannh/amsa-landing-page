@@ -5,8 +5,9 @@ export const divisionsData = {
     id: 'academics',
     title: 'Academics Division',
     tagline: 'Advancing knowledge and scientific excellence',
-    coverImage: '/src/assets/images/academics.jpg',
+    coverImage: '/src/assets/images/academics.svg',
     logo: '/src/assets/images/academics-logo.png',
+    bg: '#C79CFF',
     activities: [
       {
         id: 'workshop',
@@ -52,6 +53,7 @@ export const divisionsData = {
     tagline: 'Your gateway to global medical education',
     coverImage: '/src/assets/images/exchange.jpg',
     logo: '/src/assets/images/exchange-logo.png',
+    bg: '#FFFFFF',
     activities: [
       {
         id: 'clinical-exchanges',
@@ -97,6 +99,7 @@ export const divisionsData = {
     tagline: 'Making healthcare accessible to all',
     coverImage: '/src/assets/images/outreach.jpg',
     logo: '/src/assets/images/outreach-logo.png',
+    bg: '#C79CFF',
     activities: [
       {
         id: 'health-screenings',
@@ -142,6 +145,7 @@ export const divisionsData = {
     tagline: 'Growing together as medical professionals',
     coverImage: '/src/assets/images/membership.jpg',
     logo: '/src/assets/images/membership-logo.png',
+    bg: '#C79CFF',
     activities: [
       {
         id: 'leadership-workshops',
@@ -187,6 +191,7 @@ export const divisionsData = {
     tagline: 'Building bridges in healthcare',
     coverImage: '/src/assets/images/relations.jpg',
     logo: '/src/assets/images/relations-logo.png',
+    bg: '#C79CFF',
     activities: [
       {
         id: 'partnership-development',
@@ -232,6 +237,7 @@ export const divisionsData = {
     tagline: 'Sharing knowledge, inspiring change',
     coverImage: '/src/assets/images/publication.jpg',
     logo: '/src/assets/images/publication-logo.png',
+    bg: '#C79CFF',
     activities: [
       {
         id: 'amsa-journal',
@@ -277,6 +283,7 @@ export const divisionsData = {
     tagline: 'Join us in shaping the future of medicine',
     coverImage: '/src/assets/images/recruitment.jpg',
     logo: '/src/assets/images/recruitment-logo.png',
+    bg: '#C79CFF',
     activities: [
       {
         id: 'campus-drives',

@@ -18,9 +18,9 @@ const PartnersSection = () => {
       {/* Partner Logos - Top Row */}
       <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              <div className="w-48 md:w-56">
+              <div className="w-48 md:w-96">
 
                 <a href="https://kemkes.go.id/id/home" target="_blank" rel="noopener noreferrer">
                   <img 
@@ -84,7 +84,7 @@ const PartnersSection = () => {
       {/* Social Media Section - REDESIGNED */}
       <section className="py-12 bg-[#6E9277] bg-opacity-[0.24]">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-center mb-12">
               <span className="text-4xl font-medium text-[#184A3C]">Connect With Us</span>
             </h2>
