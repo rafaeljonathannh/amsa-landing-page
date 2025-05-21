@@ -7,6 +7,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const divisionsRef = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const timeoutRef = useRef(null);
 
   const divisions = [
     { id: 'academics', title: 'Academics' },
@@ -51,10 +52,30 @@ const Navbar = () => {
     setIsDivisionsOpen(!isDivisionsOpen);
   };
 
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setIsDivisionsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsDivisionsOpen(false);
+    }, 300); // 300ms delay sebelum menutup dropdown
+  };
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      // Clear timeout pada cleanup untuk mencegah memory leak
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, []);
 
   // Desktop NavLink Component
@@ -97,15 +118,19 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <NavLink to="/about" label="About Us" handleNavigation={handleNavigation} isScrolled={isScrolled} />
 
-            {/* Divisions Dropdown */}
-            <div className="relative" ref={divisionsRef}>
+            {/* Divisions Dropdown - Dengan delay pada mouse leave */}
+            <div 
+              className="relative" 
+              ref={divisionsRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <button
                 className={`flex items-center font-medium px-3 py-2 rounded-md border border-transparent transition-colors ${
                   isScrolled 
                     ? 'text-[#184A3C] hover:text-white hover:bg-[#184A3C]' 
                     : 'text-white hover:text-gray-800 hover:bg-white'
                 }`}
-                onMouseEnter={() => setIsDivisionsOpen(true)}
                 onClick={toggleDivisions}
               >
                 <span>Divisions</span>
@@ -118,14 +143,13 @@ const Navbar = () => {
                 className={`absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-300 transform origin-top ${
                   isDivisionsOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'
                 }`}
-                onMouseLeave={() => setIsDivisionsOpen(false)}
               >
                 <div className="py-2">
                   {divisions.map((division) => (
                     <Link
                       key={division.id}
                       to={`/divisions/${division.id}`}
-                      className="block px-4 py-2 text-[#184A3C] hover:bg-[#6E9277] hover:bg-opacity-20 transition-colors"
+                      className="block px-4 py-2 text-[#184A3C] hover:bg-gray-100 transition-colors"
                       onClick={() => setIsDivisionsOpen(false)}
                     >
                       {division.title}
@@ -137,11 +161,11 @@ const Navbar = () => {
 
             <NavLink to="/achievements" label="Achievements" handleNavigation={handleNavigation} isScrolled={isScrolled} />
             <NavLink to="/buku-putih" label="Buku Putih" handleNavigation={handleNavigation} isScrolled={isScrolled} />
-            </div>
           </div>
         </div>
-      </nav>
-    );
-  };
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;
