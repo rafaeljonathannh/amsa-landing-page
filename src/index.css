@@ -1,11 +1,42 @@
+/* Font Declarations */
+@font-face {
+  font-family: 'Akzidenz-Grotesk';
+  src: url('/src/assets/fonts/Akzidenz-grotesk-roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aileron';
+  src: url('/src/assets/fonts/Aileron-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Tailwind Extensions */
+@layer base {
+  html, body {
+    font-family: 'Akzidenz-Grotesk', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-aileron {
+    font-family: 'Aileron', system-ui, sans-serif;
+  }
+}
+
+
 /* Custom styles dapat ditambahkan di sini */
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Akidenz-Grotesk', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -31,6 +62,7 @@ body {
   min-width: 100%;  /* Ensure full width */
   min-height: 100vh;
   display: block;   /* Change from flex to block */
+  font-family: 'Akidenz-Grotesk', sans-serif;
 }
 
 h1 {
@@ -61,7 +93,7 @@ button {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Akidenz-Grotesk', 'Inter', sans-serif;
 }
 
 /* Tambahkan custom styles spesifik aplikasi di sini */

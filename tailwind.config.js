@@ -11,7 +11,8 @@ export default {
         secondary: "#6B7280",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Akzidenz-Grotesk', 'system-ui', 'sans-serif'],
+        aileron: ['Aileron', 'system-ui', 'sans-serif'],
       },
     },
   },
