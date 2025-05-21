@@ -1,27 +1,6 @@
 // src/components/Sections/EventsSection.jsx
 
-const EventsSection = () => {
-  const events = [
-    {
-      id: 1,
-      title: "PRICE AMSC 2025: Urban Health Talkshow",
-      description: "Hosted in collaboration between AMSA-Universitas Indonesia and AMSA-Malaysia, this talkshow will explore real-world urban health issues through the unique perspectives of each country. Featuring two speakers — Dr. Ariel Pradipta, MRes, PhD (Indonesia) and Dr. Zi Qi Ang, University Kebangsaan Malaysia (UKM) — who will discuss challenges, innovations, and approaches to urban health issues.",
-      image: "/src/assets/images/event-talkshow.jpg",
-    },
-    {
-      id: 2,
-      title: "The National Medical and General Biology Competition (NMGBC)",
-      description: "The National Medical and General Biology Competition (NMGBC), hosted by AMSA-Universitas Indonesia, is a highly anticipated academic event that challenges and inspires high school students in biology and medicine. Held at Fakultas Kedokteran Universitas Indonesia, this prestigious competition includes three main events...",
-      image: "/src/assets/images/event-competition.jpg",
-    },
-    {
-      id: 3,
-      title: "Comser",
-      description: "",
-      image: "/src/assets/images/event-comser.jpg",
-    },
-  ];
-
+const EventsSection = ({ events }) => {
   return (
     <div>
       {/* Whats on amsa ui */}
@@ -42,20 +21,21 @@ const EventsSection = () => {
       </section>
 
     {/* Events Grid */}
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex justify-center gap-8">
           {events.map((event) => (
             <div
               key={event.id}
               className="group relative bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              style={{ width: '33.333vw', minWidth: '300px'}}
             >
               {/* Image container — expands inside itself */}
-              <div className="overflow-hidden h-56">
+              <div className="overflow-hidden transition-all duration-300 h-[480px] group-hover:h-40">
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
               </div>
 
@@ -66,10 +46,24 @@ const EventsSection = () => {
                 </h3>
 
                 {/* Container with max height to prevent layout shift */}
-                <div className="relative overflow-hidden max-h-24 group-hover:max-h-96 transition-all duration-300 ease-in-out">
+                <div className="relative overflow-hidden max-h-0 group-hover:max-h-96 transition-all duration-300 ease-in-out">
                   <p className="text-sm text-gray-600">
                     {event.description || "Description coming soon..."}
                   </p>
+
+                   {/* Learn More */}
+                   <div className="text-center">
+                    {event.link && event.description && event.description.length !== 0 && (
+                        <a
+                          href={event.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-4 inline-block px-5 py-2 bg-[#EEF8F1] text-[#6E9277] font-semibold rounded-lg text-center border-2 border-[#184A3C] hover:bg-[#6E9277] hover:text-[#FFFFFF] hover:border-0 transition-colors"
+                          >
+                          Learn More
+                        </a>
+                    )}
+                    </div>
 
                   {/* Optional gradient fade if content is long */}
                   <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-t from-white to-transparent pointer-events-none group-hover:opacity-0 transition-opacity duration-300"></div>

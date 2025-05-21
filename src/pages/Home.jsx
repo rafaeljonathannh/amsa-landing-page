@@ -5,6 +5,7 @@ import HeroSection from '../components/Sections/HeroSection';
 import PresidentSection from '../components/Sections/PresidentSection';
 import EventsSection from '../components/Sections/EventsSection';
 import PartnersSection from '../components/Sections/PartnersSection';
+import Events from '../components/data/events';
 
 const Home = () => {
   useEffect(() => {
@@ -19,7 +20,7 @@ const Home = () => {
       <HeroSection />
       {/* Tidak memerlukan ref karena tidak ada scrolling kondisional */}
       <PresidentSection />
-      <EventsSection />
+      <EventsSection events = {Events} />
       <PartnersSection />
     </main>
   );
