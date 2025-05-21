@@ -4,8 +4,16 @@ import { motion } from 'framer-motion';
 
 const VisionMissionSection = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-white relative">
+      {/* Gradient overlay for transition to Organogram section */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-40 z-10 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 50%, rgba(110,146,119,0.3) 100%)'
+        }}
+      ></div>
+      
+      <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             {/* Our Vision - Left Column */}

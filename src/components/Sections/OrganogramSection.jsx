@@ -4,12 +4,27 @@ import { motion } from 'framer-motion';
 
 const OrganogramSection = () => {
   return (
-    <section className="py-16 bg-[#6E9277] bg-opacity-80">
+    <section 
+      className="py-16 relative" 
+      style={{ 
+        background: 'linear-gradient(to bottom, #6E9277 0%, #6E9277 50%, white 100%)',
+        position: 'relative',
+        zIndex: 1
+      }}
+    >
+      {/* Top gradient for smooth transition from Vision Mission section */}
+      <div 
+        className="absolute top-0 left-0 right-0 h-40 z-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(110,146,119,0.3) 0%, rgba(110,146,119,0.7) 50%, rgba(110,146,119,1) 100%)'
+        }}
+      ></div>
+      
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-12 relative z-10"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -22,6 +37,7 @@ const OrganogramSection = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.6 }}
+                style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.6)' }}
               >
                 Our
               </motion.span>
@@ -31,6 +47,7 @@ const OrganogramSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
+                style={{ textShadow: '0 0 12px rgba(255, 255, 255, 0.7)' }}
               >
                 Organogram
               </motion.span>
@@ -40,6 +57,7 @@ const OrganogramSection = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.6 }}
+                style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.6)' }}
               >
                 2024/2025
               </motion.span>
