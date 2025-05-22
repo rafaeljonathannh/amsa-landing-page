@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
       
       {/* Blurred bottom border */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-white to-transparent z-10"></div>
       
       {/* Together We Grow logo di kiri atas sesuai mockup */}
       <div className="absolute top-40 left-20 z-20">

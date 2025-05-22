@@ -10,28 +10,39 @@ const PresidentSection = () => {
           </h2>
           
           <div className="flex flex-col md:flex-row gap-10">
-            {/* Image */}
-            <div className="md:w-1/3">
-              <div className="relative">
-                <div className="absolute -top-4 -left-4 w-full h-full border-2 border-green-600 rounded-lg"></div>
-                  <div className="relative z-10">
-                    <img 
-                      src="/src/assets/images/president.jpg" 
-                      alt="Josh Melvern Arelian" 
-                      className="w-full rounded-lg shadow-lg"
-                    />
-                  </div>
-                </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-xl font-medium text-gray-800">Josh Melvern Arelian</h3>
-              </div>
-              <div className="flex justify-center mt-2">
-                <div className="italic mr-2">AMSA-UI</div>
-                <div className="font-semibold">Representatium</div>
-                <div className="ml-2">2024/2025</div>
-              </div>
+          {/* Image */}
+          <div className="md:w-1/3">
+            <div className="relative">
+              {/* President photo */}
+              <img 
+                src="/src/assets/images/president_bgr.png" 
+                alt="Josh Melvern Arelian" 
+                className="w-full rounded-lg"
+              />
+
+              {/* white gradient */}
+              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-10"></div>
+
+              {/* Top overlay image top */}
+              <img 
+                src="/src/assets/images/amsa-ui-rep.svg" 
+                alt="Overlay"
+                className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-42 z-20" 
+              />
+
+              {/* Bottom overlay image (president name) */}
+              <img 
+                src="/src/assets/images/president_name.svg" 
+                alt="President Name"
+                className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 w-72 z-20"
+              />
             </div>
-            
+            <div className="flex justify-center mt-2">
+              <div className="italic mr-2">AMSA-UI</div>
+              <div className="font-semibold">Representatium</div>
+              <div className="ml-2">2024/2025</div>
+            </div>
+          </div>
             {/* Text content */}
             <div className="md:w-2/3">
               <div className="space-y-4 text-gray-700">

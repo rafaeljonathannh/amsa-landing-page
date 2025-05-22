@@ -6,11 +6,12 @@ const PartnersSection = () => {
       {/* Part of Title Section */}
       <section className="py-10 bg-[#6E9277] bg-opacity-[0.24]">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-center">
-              <span className="text-4xl font-light italic text-gray-600">Part</span>
-              <span className="text-4xl font-medium text-[#184A3C] ml-2">of</span>
-            </h2>
+          <div className="max-w-6xl mx-auto text-center">
+            <img 
+              src="/src/assets/images/part-of.png" 
+              alt="Part Of" 
+              className="mx-auto w-64 md:w-80" 
+            />
           </div>
         </div>
       </section>
@@ -58,7 +59,7 @@ const PartnersSection = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
-              <div className="w-48 md:w-56">
+              <div className="w-48 md:w-96">
                 <a href="https://amsa-international.org" target="_blank" rel="noopener noreferrer">
                   <img 
                     src="/src/assets/images/logo-amsa-international.png" 
@@ -67,7 +68,7 @@ const PartnersSection = () => {
                   />
                 </a>
               </div>
-              <div className="w-48 md:w-56">
+              <div className="w-48 md:w-96">
                 <a href="https://amsaindonesia.org" target="_blank" rel="noopener noreferrer">
                   <img 
                     src="/src/assets/images/logo-amsa-indonesia.png" 
