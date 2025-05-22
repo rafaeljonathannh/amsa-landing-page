@@ -51,9 +51,9 @@ export const divisionsData = {
     id: 'exchange',
     title: 'Asian Medical Students Exchange Program',
     tagline: 'Your gateway to global medical education',
-    coverImage: '/src/assets/images/exchange.jpg',
+    coverImage: '/src/assets/images/hero-bg.jpg',
     logo: '/src/assets/images/exchange-logo.png',
-    bg: '#FFFFFF',
+    bg: '#1E4F40',
     activities: [
       {
         id: 'clinical-exchanges',
@@ -97,9 +97,9 @@ export const divisionsData = {
     id: 'outreach',
     title: 'Community Outreach',
     tagline: 'Making healthcare accessible to all',
-    coverImage: '/src/assets/images/outreach.jpg',
+    coverImage: '/src/assets/images/hero-bg.jpg',
     logo: '/src/assets/images/outreach-logo.png',
-    bg: '#C79CFF',
+    bg: '#1E4F40',
     activities: [
       {
         id: 'health-screenings',
@@ -143,9 +143,9 @@ export const divisionsData = {
     id: 'membership',
     title: 'Membership and Development',
     tagline: 'Growing together as medical professionals',
-    coverImage: '/src/assets/images/membership.jpg',
+    coverImage: '/src/assets/images/hero-bg.jpg',
     logo: '/src/assets/images/membership-logo.png',
-    bg: '#C79CFF',
+    bg: '#1E4F40',
     activities: [
       {
         id: 'leadership-workshops',
@@ -189,9 +189,9 @@ export const divisionsData = {
     id: 'relations',
     title: 'Public Relation and Delegation',
     tagline: 'Building bridges in healthcare',
-    coverImage: '/src/assets/images/relations.jpg',
+    coverImage: '/src/assets/images/hero-bg.jpg',
     logo: '/src/assets/images/relations-logo.png',
-    bg: '#C79CFF',
+    bg: '#1E4F40',
     activities: [
       {
         id: 'partnership-development',
@@ -235,9 +235,9 @@ export const divisionsData = {
     id: 'publication',
     title: 'Publication and Promotion',
     tagline: 'Sharing knowledge, inspiring change',
-    coverImage: '/src/assets/images/publication.jpg',
+    coverImage: '/src/assets/images/hero-bg.jpg',
     logo: '/src/assets/images/publication-logo.png',
-    bg: '#C79CFF',
+    bg: '#1E4F40',
     activities: [
       {
         id: 'amsa-journal',
@@ -281,9 +281,9 @@ export const divisionsData = {
     id: 'recruitment',
     title: 'Recruitment',
     tagline: 'Join us in shaping the future of medicine',
-    coverImage: '/src/assets/images/recruitment.jpg',
+    coverImage: '/src/assets/images/hero-bg.jpg',
     logo: '/src/assets/images/recruitment-logo.png',
-    bg: '#C79CFF',
+    bg: '#1E4F40',
     activities: [
       {
         id: 'campus-drives',
