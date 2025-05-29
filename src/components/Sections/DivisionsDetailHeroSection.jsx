@@ -38,11 +38,13 @@ const DivisionsDetailHeroSection = ({ division }) => {
       {/* Division logo outside the section but positioned relative to the container */}
       {division.logo && (
         <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20">
-          <img 
-            src={division.logo} 
-            alt={`${division.title} Logo`} 
-            className="h-96 w-auto"
-          />
+          <div className="w-auto">
+            <img 
+              src={division.logo} 
+              alt={`${division.title} Logo`} 
+              className="h-96 w-auto object-contain"
+            />
+          </div>
         </div>
       )}
     </div>
