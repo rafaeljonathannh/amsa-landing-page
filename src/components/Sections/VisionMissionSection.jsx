@@ -43,10 +43,15 @@ const VisionMissionSection = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.5 }}
                 whileHover={{ 
-                  scale: 1.02,  // ← ini scale up (ke depan)
+                  scale: 1.02,
                   filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
+                }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: 0.2,
+                  type: "spring", 
+                  stiffness: 300 
                 }}
               >
                 AMSA-UI as a family where each member's unique interests on opportunities as medical students are supported within a strong familial bond, and discover their full potential, while making significant societal impact and presence to enhance AMSA-UI influence
@@ -81,8 +86,16 @@ const VisionMissionSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1, duration: 0.5 }}
-                  whileHover={{ x: 5 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
+                  }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.1,
+                    type: "spring", 
+                    stiffness: 300 
+                  }}
                 >
                   <div className="mr-6">
                     <div className="text-4xl font-bold text-[#184A3C]">01.</div>
@@ -100,8 +113,16 @@ const VisionMissionSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
-                  whileHover={{ x: 5 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
+                  }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.2,
+                    type: "spring", 
+                    stiffness: 300 
+                  }}
                 >
                   <div className="mr-6">
                     <div className="text-4xl font-bold text-[#184A3C]">02.</div>
@@ -119,8 +140,16 @@ const VisionMissionSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                  whileHover={{ x: 5 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
+                  }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.3,
+                    type: "spring", 
+                    stiffness: 300 
+                  }}
                 >
                   <div className="mr-6">
                     <div className="text-4xl font-bold text-[#184A3C]">03.</div>
@@ -138,8 +167,16 @@ const VisionMissionSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
-                  whileHover={{ x: 5 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
+                  }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.4,
+                    type: "spring", 
+                    stiffness: 300 
+                  }}
                 >
                   <div className="mr-6">
                     <div className="text-4xl font-bold text-[#184A3C]">04.</div>
