@@ -1,15 +1,19 @@
 // src/components/Sections/HeroSection.jsx
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
     <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 to-gray-900 text-white overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <motion.img 
           src="/src/assets/images/hero-bg.jpg" 
           alt="AMSA Group" 
           className="w-full h-full object-cover"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
         />
       </div>
 
@@ -23,16 +27,34 @@ const HeroSection = () => {
       <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-white to-transparent z-10"></div>
       
       {/* Together We Grow logo di kiri atas sesuai mockup */}
-      <div className="absolute top-40 left-20 z-20">
+      <motion.div 
+        className="absolute top-40 left-20 z-20"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        whileHover={{ 
+          scale: 1.05,
+          filter: "drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3))"
+        }}
+      >
         <img 
           src="/src/assets/images/together-we-grow.svg" 
           alt="Together We Grow" 
           className="h-12"
         />
-      </div>
+      </motion.div>
       
       {/* AMSA-UI White Logo di tengah */}
-      <div className="relative z-20 text-center">
+      <motion.div 
+        className="relative z-20 text-center"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        whileHover={{ 
+          scale: 1.02,
+          filter: "drop-shadow(0 8px 24px rgba(255, 255, 255, 0.2))"
+        }}
+      >
         <img 
           src="/src/assets/images/amsa-ui-white-logo.png" 
           alt="AMSA-UI Logo" 
@@ -42,11 +64,24 @@ const HeroSection = () => {
             margin: '0 auto'
           }}
         />
-      </div>
+      </motion.div>
       
       {/* Scroll down indicator */}
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center z-20">
-        <div className="animate-bounce">
+      <motion.div 
+        className="absolute bottom-10 left-0 right-0 flex justify-center z-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1 }}
+      >
+        <motion.div 
+          className="animate-bounce cursor-pointer"
+          whileHover={{ 
+            scale: 1.2,
+            filter: "drop-shadow(0 4px 12px rgba(255, 255, 255, 0.4))"
+          }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        >
           <svg 
             className="w-8 h-8 text-white" 
             fill="none" 
@@ -61,8 +96,8 @@ const HeroSection = () => {
               d="M19 14l-7 7m0 0l-7-7m7 7V3" 
             />
           </svg>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

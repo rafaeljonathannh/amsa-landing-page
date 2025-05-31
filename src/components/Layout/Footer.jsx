@@ -13,11 +13,12 @@ const Footer = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-center items-center">
+          {/* AMSA Logo + Text sebagai satu group */}
           <motion.div 
-            className="mr-4"
+            className="flex items-center group cursor-pointer"
             whileHover={{ 
-              scale: 1.02,
-              filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
+              scale: 1.05,
+              filter: "drop-shadow(0 6px 16px rgba(0, 0, 0, 0.2))"
             }}
             transition={{ 
               type: "spring", 
@@ -26,28 +27,20 @@ const Footer = () => {
               duration: 0.4
             }}
           >
-            <img src="/src/assets/images/amsa-indonesia-green.png" alt="AMSA Logo" className="h-12" />
+            <div className="mr-4 transition-all duration-300 group-hover:scale-105">
+              <img src="/src/assets/images/amsa-indonesia-green.png" alt="AMSA Logo" className="h-12" />
+            </div>
+            <div className="flex flex-col transition-all duration-300 group-hover:scale-105">
+              <p className="font-bold text-[#184A3C] group-hover:text-[#0d3228] transition-colors duration-300">AMSA-</p>
+              <p className="text-sm text-[#184A3C] group-hover:text-[#0d3228] transition-colors duration-300">Universitas Indonesia</p>
+            </div>
           </motion.div>
-          <motion.div 
-            className="flex flex-col"
-            whileHover={{ 
-              scale: 1.02,
-              filter: "drop-shadow(0 2px 8px rgba(24, 74, 60, 0.2))"
-            }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 300, 
-              damping: 20,
-              duration: 0.4
-            }}
-          >
-            <p className="font-bold text-[#184A3C]">AMSA-</p>
-            <p className="text-sm text-[#184A3C]">Universitas Indonesia</p>
-          </motion.div>
+
+          {/* Together We Grow Logo - terpisah */}
           <motion.div 
             className="ml-8"
             whileHover={{ 
-              scale: 1.02,
+              scale: 1.05,
               filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
             }}
             transition={{ 

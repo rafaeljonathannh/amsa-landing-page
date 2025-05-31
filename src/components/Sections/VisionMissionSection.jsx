@@ -39,11 +39,15 @@ const VisionMissionSection = () => {
               
               {/* Vision Description - Center aligned paragraph */}
               <motion.p 
-                className="text-gray-800 leading-relaxed text-lg text-center font-medium px-4"
+                className="text-gray-800 leading-relaxed text-lg text-center px-4"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.5 }}
+                whileHover={{ 
+                  scale: 1.02,  // ← ini scale up (ke depan)
+                  filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
+                }}
               >
                 AMSA-UI as a family where each member's unique interests on opportunities as medical students are supported within a strong familial bond, and discover their full potential, while making significant societal impact and presence to enhance AMSA-UI influence
               </motion.p>
