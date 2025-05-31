@@ -16,8 +16,8 @@ const Events = [
     },
     {
       id: 3,
-      title: "?",
-      description: "",
+      title: "COMING SOON!",
+      description: "COMING SOON! Stay tuned for more updates on our upcoming events.",
       image: "/src/assets/images/event-comser.jpg",
       link: "https://example.com/event3"
     },
