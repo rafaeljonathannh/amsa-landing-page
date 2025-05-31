@@ -91,10 +91,10 @@ const VisionMissionSection = () => {
                     filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
                   }}
                   transition={{ 
-                    duration: 0.5, 
+                    duration: 0.6, 
                     delay: 0.1,
-                    type: "spring", 
-                    stiffness: 300 
+                    type: "tween", 
+                    ease: "easeOut"
                   }}
                 >
                   <div className="mr-6">
@@ -118,10 +118,10 @@ const VisionMissionSection = () => {
                     filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
                   }}
                   transition={{ 
-                    duration: 0.5, 
+                    duration: 0.6, 
                     delay: 0.2,
-                    type: "spring", 
-                    stiffness: 300 
+                    type: "tween", 
+                    ease: "easeOut"
                   }}
                 >
                   <div className="mr-6">
@@ -145,10 +145,10 @@ const VisionMissionSection = () => {
                     filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
                   }}
                   transition={{ 
-                    duration: 0.5, 
+                    duration: 0.6, 
                     delay: 0.3,
-                    type: "spring", 
-                    stiffness: 300 
+                    type: "tween", 
+                    ease: "easeOut"
                   }}
                 >
                   <div className="mr-6">
@@ -172,10 +172,10 @@ const VisionMissionSection = () => {
                     filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))"
                   }}
                   transition={{ 
-                    duration: 0.5, 
+                    duration: 0.6, 
                     delay: 0.4,
-                    type: "spring", 
-                    stiffness: 300 
+                    type: "tween", 
+                    ease: "easeOut"
                   }}
                 >
                   <div className="mr-6">
