@@ -202,13 +202,6 @@ export const divisionsData = {
       description: 'A program attended by representatives from several AMSA universities in District 2 to share stories and experiences from their respective universities.'
     },
     {
-      id: 'collaborative-projects',
-      title: 'AMSA International Day',
-      image: '',
-      link: '',
-      description: 'A program inviting AMSA International to provide an overview of AMSA International to AMSA-UI members. This program is a collaboration between AMSA International Talkshow and E-Club x ALSA-UI.'
-    },
-    {
       id: 'government-liaison',
       title: 'E-Club x ALSA-UI',
       image: '/src/assets/images/divisions/prnd/eclub.JPG',
@@ -234,52 +227,60 @@ export const divisionsData = {
     bg: '#08315E',
     activities: [
       {
-        id: 'amsa-journal',
-        title: 'AMSA Medical Journal',
-        image: '/src/assets/images/publication-journal.jpg',
+        id: 'pnp-101-sharing-session',
+        title: 'PNP 101',
+        image: '/src/assets/images/divisions/pnp/101.JPG',
         link: '',
-        description: 'A peer-reviewed publication featuring research articles, case studies, and reviews written by medical students, promoting scholarly writing and scientific inquiry.'
-
+        description: 'A sharing session about the skills and knowledge needed to carry out the work programs of the PnP division during this tenure.'
       },
       {
-        id: 'newsletter',
-        title: 'Monthly Newsletter',
-        image: '/src/assets/images/publication-newsletter.jpg',
+        id: 'amsa-ui-social-media-publications',
+        title: 'AMSA-UI Social Media Publications',
+        image: '/src/assets/images/divisions/pnp/spsmed.JPG',
         link: '',
-        description: 'Regular digital publication highlighting recent AMSA-UI activities, upcoming events, member achievements, and relevant medical news for the AMSA community.'
-
+        description: 'Publications on AMSA-UI social media, such as Birthday Cards and Greeting Cards.'
       },
       {
-        id: 'social-media',
-        title: 'Social Media Campaign Management',
-        image: '/src/assets/images/publication-social.jpg',
+        id: 'addt-school-of-design',
+        title: 'ADDT & School of Design',
+        image: '/src/assets/images/divisions/pnp/sod.JPG',
         link: '',
-        description: 'Strategic planning and execution of engaging content across social media platforms to raise awareness about AMSA initiatives and health education topics.'
-
+        description: 'Training to deepen skills in design and documentation, in collaboration with the Media Communication division of BEM IKM FKUI.'
       },
       {
-        id: 'website-development',
-        title: 'Website Content Development',
-        image: '/src/assets/images/publication-website.jpg',
+        id: 'pnp-x-liaison-officer',
+        title: 'PnP X Liaison Officer',
+        image: '/src/assets/images/divisions/pnp/lo.png',
         link: '',
-        description: 'Creation and maintenance of informative, up-to-date content for the AMSA-UI website, ensuring it serves as an effective resource for members and visitors.'
-
+        description: 'A liaison for the divisions within AMSA-UI to coordinate with the PnP division.'
       },
       {
-        id: 'health-materials',
-        title: 'Health Education Materials',
-        image: '/src/assets/images/publication-education.jpg',
+        id: 'report-of-events',
+        title: 'Report of Events',
+        image: '/src/assets/images/divisions/pnp/roe.PNG',
         link: '',
-        description: 'Development of accessible, evidence-based health information materials for distribution during community outreach programs and health awareness campaigns.'
-
+        description: 'Sharing positive experiences from AMSA-UI events, updated monthly. The LO has been doing this well.'
       },
       {
-        id: 'multimedia',
-        title: 'Multimedia Production',
-        image: '/src/assets/images/publication-multimedia.jpg',
+        id: 'people-of-amsa-ui',
+        title: 'People of AMSA-UI',
+        image: '/src/assets/images/divisions/pnp/poa.JPG',
         link: '',
-        description: 'Creation of videos, podcasts, and interactive content that showcases AMSA activities and provides engaging health education in innovative formats.'
-
+        description: 'Appreciating AMSA-UI members for their achievements, along with sharing stories and struggles throughout their journey.'
+      },
+      {
+        id: 'life-beyond-amsa-ui',
+        title: 'Life Beyond AMSA-U',
+        image: '/src/assets/images/divisions/pnp/life_beyond.JPG',
+        link: '',
+        description: 'Sharing experiences from participating in activities outside AMSA-UI.'
+      },
+      {
+        id: 'amsa-ui-video-log',
+        title: 'AMSA-UI Video Log',
+        image: '/src/assets/images/divisions/pnp/vid_log.JPG',
+        link: '',
+        description: 'Videos containing documentation and information about National Events attended by AMSA-UI delegates, including testimonials.'
       }
     ]
   },
@@ -292,53 +293,28 @@ export const divisionsData = {
     bg: '#790000',
     activities: [
       {
-        id: 'campus-drives',
-        title: 'Campus Recruitment Drives',
-        image: '/src/assets/images/recruitment-campus.jpg',
+        id: 'branding',
+        title: 'Branding',
+        image: '/src/assets/images/divisions/recruit/branding.png',
         link: '',
-        description: 'Strategic in-person recruitment events at medical schools, featuring interactive information booths, alumni testimonials, and on-the-spot registration opportunities.'
+        description: "Branding is the Recruitment Division's first program aimed at introducing AMSA-UI to new FKUI students to attract their interest in joining AMSA-UI. Example: Posting impressions and experiences from former and current representatives during their time in AMSA."
+      },
+      {
+        id: 'magang-national',
+        title: 'Magang Umum AMSA Indonesia and National team',
+        image: '/src/assets/images/divisions/recruit/magang_ina.png',
+        link: '',
+        description: 'An internship event inviting the AMSA-INA Executive Board and several National Team members to present AMSA-INA to Youth 2025.'
 
       },
       {
-        id: 'orientation',
-        title: 'New Member Orientation Program',
-        image: '/src/assets/images/recruitment-orientation.jpg',
+        id: 'magang-international',
+        title: 'Magang Umum AMSA International',
+        image: '/src/assets/images/divisions/recruit/magang_inter.png',
         link: '',
-        description: 'Comprehensive introduction sessions for newly joined members, covering AMSA`s mission, structure, opportunities, and ways to get involved in various activities.'
+        description: 'An internship event inviting AMSA International to present various aspects of AMSA International to Youth 2025.'
 
       },
-      {
-        id: 'info-sessions',
-        title: 'AMSA Opportunities Information Sessions',
-        image: '/src/assets/images/recruitment-info.jpg',
-        link: '',
-        description: 'Presentations highlighting the benefits of AMSA membership, including exchange programs, leadership development, and academic and professional growth opportunities.'
-
-      },
-      {
-        id: 'virtual-recruitment',
-        title: 'Virtual Recruitment Campaigns',
-        image: '/src/assets/images/recruitment-virtual.jpg',
-        link: '',
-        description: 'Online strategies including webinars, social media campaigns, and digital open houses to reach potential members across different locations.'
-
-      },
-      {
-        id: 'ambassador',
-        title: 'AMSA Ambassador Program',
-        image: '/src/assets/images/recruitment-ambassador.jpg',
-        link: '',
-        description: 'Initiative that trains current members to serve as AMSA representatives at their medical schools, promoting membership and serving as the first point of contact for interested students.'
-
-      },
-      {
-        id: 'retention',
-        title: 'Member Retention Initiatives',
-        image: '/src/assets/images/recruitment-retention.jpg',
-        link: '',
-        description: 'Programs designed to maintain member engagement throughout their medical education, including recognition systems, feedback mechanisms, and personalized outreach.'
-
-      }
     ]
   }
 };
