@@ -32,10 +32,6 @@ const HeroSection = () => {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        whileHover={{ 
-          scale: 1.05,
-          filter: "drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3))"
-        }}
       >
         <img 
           src="/src/assets/images/together-we-grow.svg" 
@@ -50,16 +46,12 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        whileHover={{ 
-          scale: 1.02,
-          filter: "drop-shadow(0 8px 24px rgba(255, 255, 255, 0.2))"
-        }}
       >
         <img 
           src="/src/assets/images/amsa-ui-white-logo.png" 
           alt="AMSA-UI Logo" 
           style={{
-            width: '700px',  // Diubah dari 350px menjadi 700px (2x lipat)
+            width: '700px', // Diubah dari 350px menjadi 700px (2x lipat)
             height: 'auto',
             margin: '0 auto'
           }}
@@ -75,12 +67,6 @@ const HeroSection = () => {
       >
         <motion.div 
           className="animate-bounce cursor-pointer"
-          whileHover={{ 
-            scale: 1.2,
-            filter: "drop-shadow(0 4px 12px rgba(255, 255, 255, 0.4))"
-          }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <svg 
             className="w-8 h-8 text-white" 

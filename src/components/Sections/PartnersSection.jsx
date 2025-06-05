@@ -5,25 +5,24 @@ const PartnersSection = () => {
   return (
     <>
       {/* Part of Title Section */}
-      <section className="py-10 bg-[#6E9277] bg-opacity-[0.24]">
-        <div className="container mx-auto px-4">
+      <section className="py-4 md:py-8 bg-[#6E9277] bg-opacity-[0.24]">
+        <div className="container mx-auto"> {/* Changed from px-4 */}
           <div className="max-w-6xl mx-auto text-center">
-            <motion.img 
-              src="/src/assets/images/part-of.png" 
-              alt="Part Of" 
-              className="mx-auto w-64 md:w-80"
-              data-aos="fade-up"
-              whileHover={{ 
-                scale: 1.05,
-                filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15))"
-              }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 300, 
-                damping: 20,
-                duration: 0.4
-              }}
-            />
+            
+            {/* Image with fade left to right animation */}
+            <motion.div 
+              className="flex justify-center"
+              initial={{ opacity: 0, x: -50 }} // Added x: -50 for fade left to right
+              whileInView={{ opacity: 1, x: 0 }} // Changed y to x
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }} // Combined transition properties
+            >
+              <img 
+                src="/src/assets/images/part-of.png" 
+                alt="Part Of" 
+                style={{ width: '200px', height: 'auto' }} 
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -32,13 +31,9 @@ const PartnersSection = () => {
       <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12" data-aos="fade-up" data-aos-delay="100">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12" data-aos="fade-right" data-aos-delay="100">
               <motion.div 
                 className="w-48 md:w-96"
-                whileHover={{ 
-                  scale: 1.05,
-                  filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15))"
-                }}
                 transition={{ 
                   type: "spring", 
                   stiffness: 300, 
@@ -56,10 +51,6 @@ const PartnersSection = () => {
               </motion.div>
               <motion.div 
                 className="w-48 md:w-56"
-                whileHover={{ 
-                  scale: 1.05,
-                  filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15))"
-                }}
                 transition={{ 
                   type: "spring", 
                   stiffness: 300, 
@@ -75,10 +66,6 @@ const PartnersSection = () => {
               </motion.div>
               <motion.div 
                 className="w-48 md:w-56"
-                whileHover={{ 
-                  scale: 1.05,
-                  filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15))"
-                }}
                 transition={{ 
                   type: "spring", 
                   stiffness: 300, 
@@ -103,13 +90,9 @@ const PartnersSection = () => {
       <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16" data-aos="fade-up" data-aos-delay="200">
+            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16" data-aos="fade-right" data-aos-delay="200">
               <motion.div 
                 className="w-48 md:w-96"
-                whileHover={{ 
-                  scale: 1.05,
-                  filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15))"
-                }}
                 transition={{ 
                   type: "spring", 
                   stiffness: 300, 
@@ -127,10 +110,6 @@ const PartnersSection = () => {
               </motion.div>
               <motion.div 
                 className="w-48 md:w-96"
-                whileHover={{ 
-                  scale: 1.05,
-                  filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15))"
-                }}
                 transition={{ 
                   type: "spring", 
                   stiffness: 300, 
@@ -157,11 +136,7 @@ const PartnersSection = () => {
           <div className="max-w-7xl mx-auto">
             <motion.h2 
               className="text-center mb-12"
-              data-aos="fade-up"
-              whileHover={{ 
-                scale: 1.02,
-                filter: "drop-shadow(0 4px 12px rgba(24, 74, 60, 0.2))"
-              }}
+              data-aos="fade-right"
               transition={{ 
                 type: "spring", 
                 stiffness: 300, 
@@ -172,17 +147,13 @@ const PartnersSection = () => {
               <span className="text-4xl font-medium text-[#184A3C]">Connect With Us</span>
             </motion.h2>
 
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 max-w-4xl mx-auto" data-aos="fade-right" data-aos-delay="100">
               {/* Gmail */}
               <motion.a 
                 href="mailto:amsaui.org@gmail.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="group"
-                whileHover={{ 
-                  scale: 1.1,
-                  filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.2))"
-                }}
                 transition={{ 
                   type: "spring", 
                   stiffness: 300, 
@@ -206,10 +177,6 @@ const PartnersSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="group"
-                whileHover={{ 
-                  scale: 1.1,
-                  filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.2))"
-                }}
                 transition={{ 
                   type: "spring", 
                   stiffness: 300, 
@@ -233,10 +200,6 @@ const PartnersSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="group"
-                whileHover={{ 
-                  scale: 1.1,
-                  filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.2))"
-                }}
                 transition={{ 
                   type: "spring", 
                   stiffness: 300, 
@@ -257,12 +220,8 @@ const PartnersSection = () => {
 
             <motion.div 
               className="mt-10 text-center"
-              data-aos="fade-up" 
+              data-aos="fade-right" 
               data-aos-delay="200"
-              whileHover={{ 
-                scale: 1.02,
-                filter: "drop-shadow(0 2px 8px rgba(24, 74, 60, 0.15))"
-              }}
               transition={{ 
                 type: "spring", 
                 stiffness: 300, 
@@ -285,10 +244,6 @@ const PartnersSection = () => {
               <div className="flex justify-center md:justify-start" data-aos="fade-right">
                 <motion.div 
                   className="w-64 md:w-80"
-                  whileHover={{ 
-                    scale: 1.05,
-                    filter: "drop-shadow(0 12px 32px rgba(0, 0, 0, 0.2))"
-                  }}
                   transition={{ 
                     type: "spring", 
                     stiffness: 300, 
@@ -298,7 +253,7 @@ const PartnersSection = () => {
                 >
                   <a href="https://www.ui.ac.id/" target="_blank" rel="noopener noreferrer">
                     <img 
-                      src="/src/assets/images/logo-ui.png" 
+                      src="/src/assets/images/logo-fkui.jpeg" 
                       alt="Universitas Indonesia" 
                       className="w-full h-auto"
                     />
@@ -307,14 +262,9 @@ const PartnersSection = () => {
               </div>
 
               {/* Content */}
-              <div className="text-center md:text-left" data-aos="fade-left">
+              <div className="text-center md:text-left" data-aos="fade-right">
                 <motion.h3 
                   className="text-2xl md:text-3xl font-bold text-gray-800 mb-6"
-                  whileHover={{ 
-                    scale: 1.02,
-                    color: "#184A3C",
-                    filter: "drop-shadow(0 2px 8px rgba(24, 74, 60, 0.2))"
-                  }}
                   transition={{ 
                     type: "spring", 
                     stiffness: 300, 
@@ -327,10 +277,6 @@ const PartnersSection = () => {
 
                 <motion.p 
                   className="text-gray-700 text-lg leading-relaxed mb-6"
-                  whileHover={{ 
-                    x: 5,
-                    filter: "drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1))"
-                  }}
                   transition={{ 
                     type: "spring", 
                     stiffness: 300, 
@@ -349,11 +295,6 @@ const PartnersSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block bg-gray-50 p-6 rounded-lg shadow-md cursor-pointer"
-                  whileHover={{ 
-                    y: -4,
-                    filter: "drop-shadow(0 12px 32px rgba(0, 0, 0, 0.15))",
-                    backgroundColor: "#f8f9fa"
-                  }}
                   transition={{ 
                     type: "spring", 
                     stiffness: 300, 
@@ -364,11 +305,6 @@ const PartnersSection = () => {
                   <div className="flex items-start">
                     <motion.div 
                       className="mr-4 mt-1"
-                      whileHover={{ 
-                        scale: 1.1,
-                        rotate: [0, -5, 5, 0],
-                        filter: "drop-shadow(0 2px 8px rgba(24, 74, 60, 0.3))"
-                      }}
                       transition={{ 
                         type: "spring", 
                         stiffness: 400, 
@@ -383,19 +319,11 @@ const PartnersSection = () => {
                     <div>
                       <motion.h4 
                         className="font-semibold text-[#184A3C] mb-2"
-                        whileHover={{ 
-                          scale: 1.02,
-                          filter: "drop-shadow(0 1px 4px rgba(24, 74, 60, 0.3))"
-                        }}
                       >
                         AMSA-UI Location
                       </motion.h4>
                       <motion.p 
                         className="text-gray-600 leading-relaxed"
-                        whileHover={{ 
-                          x: 2,
-                          filter: "drop-shadow(0 1px 4px rgba(0, 0, 0, 0.1))"
-                        }}
                       >
                         Gedung C Lantai 4, Rumpun Ilmu Kesehatan (RIK)<br/>
                         Kampus UI Depok, Jawa Barat 16424<br/>
