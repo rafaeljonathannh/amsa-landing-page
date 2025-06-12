@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <motion.img 
-          src="/src/assets/images/hero-bg.jpg" 
+          src="/images/hero-bg.jpg" 
           alt="AMSA Group" 
           className="w-full h-full object-cover"
           initial={{ scale: 1.1 }}
@@ -34,7 +34,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
       >
         <img 
-          src="/src/assets/images/together-we-grow.svg" 
+          src="/images/together-we-grow.svg" 
           alt="Together We Grow" 
           className="h-12"
         />
@@ -48,7 +48,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <img 
-          src="/src/assets/images/amsa-ui-white-logo.png" 
+          src="/images/amsa-ui-white-logo.png" 
           alt="AMSA-UI Logo" 
           style={{
             width: '700px', // Diubah dari 350px menjadi 700px (2x lipat)

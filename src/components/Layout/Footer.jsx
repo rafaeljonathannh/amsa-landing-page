@@ -28,7 +28,7 @@ const Footer = () => {
             }}
           >
             <div className="mr-4 transition-all duration-300 group-hover:scale-105">
-              <img src="/src/assets/images/amsa-indonesia-green.png" alt="AMSA Logo" className="h-12" />
+              <img src="/images/amsa-indonesia-green.png" alt="AMSA Logo" className="h-12" />
             </div>
             <div className="flex flex-col transition-all duration-300 group-hover:scale-105">
               <p className="font-bold text-[#184A3C] group-hover:text-[#0d3228] transition-colors duration-300">AMSA-</p>
@@ -50,7 +50,7 @@ const Footer = () => {
               duration: 0.4
             }}
           >
-            <img src="/src/assets/images/together-we-grow-green.svg" alt="Together We Grow" className="h-10" />
+            <img src="/images/together-we-grow-green.svg" alt="Together We Grow" className="h-10" />
           </motion.div>
         </div>
       </div>

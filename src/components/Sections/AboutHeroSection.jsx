@@ -8,7 +8,7 @@ const AboutHeroSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <motion.img 
-          src="/src/assets/images/about-hero.jpg" 
+          src="/images/about-hero.jpg" 
           alt="AMSA Team" 
           className="w-full h-full"
           style={{
@@ -41,7 +41,7 @@ const AboutHeroSection = () => {
         transition={{ duration: 0.7, delay: 0.2 }}
       >
         <img 
-          src="/src/assets/images/amsa-ui-white-logo.png" 
+          src="/images/amsa-ui-white-logo.png" 
           alt="AMSA-UI Logo" 
           style={{
             width: '750px',
@@ -60,7 +60,7 @@ const AboutHeroSection = () => {
         whileHover={{ scale: 1.05 }}
       >
         <img 
-          src="/src/assets/images/together-we-grow.svg" 
+          src="/images/together-we-grow.svg" 
           alt="Together We Grow" 
           className="h-12"
         />

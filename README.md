@@ -24,13 +24,15 @@ cd amsa-landing-page
 npm install
 ```
 
-### 3. Create required image folders
+### 3. Ensure image folder structure
 
-Create the following folder structure for images:
+Make sure you have the following folder structure for images:
 
 ```
-src/assets/images/
+public/images/
 ```
+
+**Note**: Images should be placed in `public/images/` NOT `src/assets/images/` for proper Vercel deployment.
 
 ### 4. Run the development server
 
@@ -42,16 +44,68 @@ This will start the Vite development server, typically at http://localhost:5173
 
 ## Required Images
 
-Before running the project, make sure you have the following images in the `src/assets/images/` directory:
+Before running the project, make sure you have the following images in the `public/images/` directory:
 
-- logo.png
-- hero-bg.jpg
-- about-image.jpg
-- achievement1.jpg, achievement2.jpg, achievement3.jpg, achievement4.jpg
-- academics.jpg, exchange.jpg, outreach.jpg, membership.jpg, relations.jpg, publication.jpg, recruitment.jpg
-- buku-putih-2021.jpg, buku-putih-2022.jpg, buku-putih-2023.jpg, buku-putih-2024.jpg
-- team1.jpg through team6.jpg
-- history-image.jpg
+### Core Images:
+- `amsa-ui-white-logo.png`
+- `amsa-indonesia-green.png` 
+- `together-we-grow.svg`
+- `together-we-grow-green.svg`
+- `hero-bg.jpg`
+- `about-hero.jpg`
+
+### Events:
+- `event-talkshow.jpg`
+- `event-competition.jpg` 
+- `event-comser.jpg`
+
+### Achievements:
+- `egypt-wm.jpg`
+- `1st-best-speaker.jpg`
+- `1st-winner-debate.jpg`
+- `best-amsa-univ.jpg`
+- `pcc-eamsc-scientific.jpg`
+- `achievement-placeholder-1.jpg`
+- `achievement-placeholder-2.jpg`
+
+### Divisions:
+- `divisions/academics/main.svg`
+- `divisions/academics/eamsc.JPG`
+- `divisions/academics/price.jpg`
+- `divisions/academics/rpcp.png`
+- `divisions/academics/isat.JPG`
+- `divisions/amsep/main.JPG`
+- `divisions/amsep/hosting.JPG`
+- `divisions/amsep/amsaui_birthday.jpeg`
+- `divisions/mnd/report_card.jpg`
+- `divisions/mnd/awardee.PNG`
+- `divisions/mnd/neutrophil.jpg`
+- `divisions/mnd/outing.jpg`
+- `divisions/prnd/nitrate.jpg`
+- `divisions/prnd/sharing.JPG`
+- `divisions/prnd/eclub.JPG`
+- `divisions/prnd/video_log.jpg`
+- `divisions/pnp/leaflet.JPG`
+- `divisions/pnp/photo.JPG`
+- `divisions/pnp/poster_comp.JPG`
+- `divisions/pnp/content_creator.JPG`
+- `divisions/pnp/life_beyond.JPG`
+- `divisions/pnp/vid_log.JPG`
+- `divisions/recruit/branding.png`
+- `divisions/recruit/magang_ina.png`
+- `divisions/recruit/magang_inter.png`
+
+### Logos:
+- `academics-logo.png`
+- `exchange-logo.png`
+- `relations-logo.png`
+- `publication-logo.png`
+- `recruitment-logo.png`
+- `outreach-logo.png`
+- `membership-logo.png`
+
+### Buku Putih:
+- `buku-putih-2024.jpg`
 
 ## Available Scripts
 
@@ -59,6 +113,15 @@ Before running the project, make sure you have the following images in the `src/
 - `npm run build` - Build for production
 - `npm run lint` - Lint the codebase
 - `npm run preview` - Preview the production build
+
+## Deployment to Vercel
+
+1. Make sure all images are in `public/images/` folder
+2. Push changes to GitHub
+3. Connect repository to Vercel
+4. Deploy!
+
+**Important**: Images must be in `public/images/` for Vercel deployment to work properly.
 
 ## Technologies Used
 
@@ -72,16 +135,18 @@ Before running the project, make sure you have the following images in the `src/
 
 ```
 src/
-├── assets/         # Images and other static assets
-│   └── images/     # Store all images here
 ├── components/     # Reusable components
 │   ├── Layout/     # Layout components (Navbar, Footer)
 │   ├── UI/         # UI components (Buttons, Cards, etc.)
-│   └── Sections/   # Section components for pages
+│   ├── Sections/   # Section components for pages
+│   └── data/       # Data files
 ├── pages/          # Page components
 ├── App.jsx         # Main application component
 ├── main.jsx        # Entry point
 └── index.css       # Global styles and Tailwind directives
+
+public/
+└── images/         # All images stored here for deployment
 ```
 
 ## Browser Support
