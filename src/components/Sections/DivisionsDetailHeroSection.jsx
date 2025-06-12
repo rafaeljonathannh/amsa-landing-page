@@ -28,7 +28,7 @@ const DivisionsDetailHeroSection = ({ division }) => {
         {/* Together We Grow logo in top left */}
         <div className="absolute top-24 left-20 z-20">
           <img 
-            src="/src/assets/images/together-we-grow.svg" 
+            src="/images/together-we-grow.svg" 
             alt="Together We Grow" 
             className="h-12"
           />

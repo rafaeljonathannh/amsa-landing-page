@@ -18,7 +18,7 @@ const PartnersSection = () => {
               transition={{ duration: 0.7 }} // Combined transition properties
             >
               <img 
-                src="/src/assets/images/part-of.png" 
+                src="/images/part-of.png" 
                 alt="Part Of" 
                 style={{ width: '200px', height: 'auto' }} 
               />
@@ -43,7 +43,7 @@ const PartnersSection = () => {
               >
                 <a href="https://kemkes.go.id/id/home" target="_blank" rel="noopener noreferrer">
                   <img 
-                    src="/src/assets/images/logo-kemenkes.png" 
+                    src="/images/logo-kemenkes.png" 
                     alt="Kemenkes" 
                     className="w-full h-auto"
                   />
@@ -59,7 +59,7 @@ const PartnersSection = () => {
                 }}
               >
                 <img 
-                  src="/src/assets/images/logo-rscm.png" 
+                  src="/images/logo-rscm.png" 
                   alt="RSCM" 
                   className="w-full h-auto"
                 />
@@ -75,7 +75,7 @@ const PartnersSection = () => {
               >
                 <a href="https://www.instagram.com/bemfkui/" target="_blank" rel="noopener noreferrer">
                   <img 
-                    src="/src/assets/images/logo-bem-fkui.png" 
+                    src="/images/logo-bem-fkui.png" 
                     alt="BEM IKM FKUI 2025" 
                     className="w-full h-auto"
                   />
@@ -102,7 +102,7 @@ const PartnersSection = () => {
               >
                 <a href="https://amsa-international.org" target="_blank" rel="noopener noreferrer">
                   <img 
-                    src="/src/assets/images/logo-amsa-international.png" 
+                    src="/images/logo-amsa-international.png" 
                     alt="AMSA International" 
                     className="w-full h-auto"
                   />
@@ -119,7 +119,7 @@ const PartnersSection = () => {
               >
                 <a href="https://amsaindonesia.org" target="_blank" rel="noopener noreferrer">
                   <img 
-                    src="/src/assets/images/logo-amsa-indonesia.png" 
+                    src="/images/logo-amsa-indonesia.png" 
                     alt="AMSA Indonesia" 
                     className="w-full h-auto"
                   />
@@ -163,7 +163,7 @@ const PartnersSection = () => {
               >
                 <div className="w-20 h-18 md:w-22 md:h-22 bg-white rounded-full shadow-md flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
                   <img 
-                    src="/src/assets/images/icon-gmail.png" 
+                    src="/images/icon-gmail.png" 
                     alt="Gmail" 
                     className="w-9 h-9 md:w-12 md:h-12"
                   />
@@ -186,7 +186,7 @@ const PartnersSection = () => {
               >
                 <div className="w-20 h-18 md:w-22 md:h-22 bg-white rounded-full shadow-md flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
                   <img 
-                    src="/src/assets/images/icon-youtube.png" 
+                    src="/images/icon-youtube.png" 
                     alt="YouTube" 
                     className="w-9 h-9 md:w-12 md:h-12"
                   />
@@ -209,7 +209,7 @@ const PartnersSection = () => {
               >
                 <div className="w-18 h-18 md:w-22 md:h-22 bg-white rounded-full shadow-md flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
                   <img 
-                    src="/src/assets/images/icon-instagram.png" 
+                    src="/images/icon-instagram.png" 
                     alt="Instagram" 
                     className="w-9 h-9 md:w-12 md:h-12"
                   />
@@ -253,7 +253,7 @@ const PartnersSection = () => {
                 >
                   <a href="https://www.ui.ac.id/" target="_blank" rel="noopener noreferrer">
                     <img 
-                      src="/src/assets/images/logo-fkui.jpeg" 
+                      src="/images/logo-fkui.jpeg" 
                       alt="Universitas Indonesia" 
                       className="w-full h-auto"
                     />

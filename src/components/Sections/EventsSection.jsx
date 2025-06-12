@@ -18,7 +18,7 @@ const EventsSection = ({ events }) => {
               transition={{ duration: 0.7 }}
             >
               <img 
-                src="/src/assets/images/whats-on-amsa.svg" 
+                src="/images/whats-on-amsa.svg" 
                 alt="What's On AMSA" 
                 style={{ width: '430px', height: 'auto' }} 
               />

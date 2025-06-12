@@ -103,7 +103,7 @@ const Navbar = () => {
           <a href="/" className="flex items-center cursor-pointer" onClick={handleLogoClick}>
             <div className="w-20 flex items-center justify-center">
               <img 
-                src={isScrolled ? "/src/assets/images/logo-colored.png" : "/src/assets/images/logo-white.png"} 
+                src={isScrolled ? "/images/logo-colored.png" : "/images/logo-white.png"} 
                 alt="AMSA Logo" 
                 className={`${isScrolled ? 'h-14' : 'h-12'} w-auto object-contain`} 
               />

@@ -75,7 +75,7 @@ const OrganogramSection = () => {
             {/* Desktop Version */}
             <div className="hidden md:block">
               <motion.img 
-                src="/src/assets/images/organogram.svg" 
+                src="/images/organogram.svg" 
                 alt="AMSA-UI Organizational Chart 2024/2025" 
                 className="w-full h-auto"
                 whileHover={{ scale: 1.02 }}
@@ -87,7 +87,7 @@ const OrganogramSection = () => {
             <div className="md:hidden">
               <div className="relative">
                 <motion.img 
-                  src="/src/assets/images/organogram-mobile.svg" 
+                  src="/images/organogram-mobile.svg" 
                   alt="AMSA-UI Organizational Chart 2024/2025" 
                   className="w-full h-auto"
                   whileTap={{ scale: 1.1 }}
@@ -95,7 +95,7 @@ const OrganogramSection = () => {
                 />
                 <motion.button 
                   className="absolute bottom-4 right-4 bg-white bg-opacity-90 text-[#184A3C] py-2 px-4 rounded-full text-sm font-medium shadow-md"
-                  onClick={() => window.open('/src/assets/images/organogram.svg', '_blank')}
+                  onClick={() => window.open('/images/organogram.svg', '_blank')}
                   whileHover={{ scale: 1.1, backgroundColor: "#fff" }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -29,7 +29,7 @@ const PresidentSection = () => {
               >
                 {/* President photo */}
                 <img 
-                  src="/src/assets/images/president_bgr.png" 
+                  src="/images/president_bgr.png" 
                   alt="Josh Melvern Arelian" 
                   className="w-full rounded-lg"
                 />
@@ -39,14 +39,14 @@ const PresidentSection = () => {
 
                 {/* Top overlay image top */}
                 <motion.img 
-                  src="/src/assets/images/amsa-ui-rep.svg" 
+                  src="/images/amsa-ui-rep.svg" 
                   alt="Overlay"
                   className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-42 z-20" 
                 />
 
                 {/* Bottom overlay image (president name) */}
                 <motion.img 
-                  src="/src/assets/images/president_name.svg" 
+                  src="/images/president_name.svg" 
                   alt="President Name"
                   className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 w-72 z-20"
                 />

@@ -20,7 +20,7 @@ const AboutSection = () => {
                 data-aos-delay="100"
               >
                 <img
-                  src="/src/assets/images/about-image.jpg"
+                  src="/images/about-image.jpg"
                   alt="AMSA Team"
                   className="w-full h-auto object-cover"
                 />

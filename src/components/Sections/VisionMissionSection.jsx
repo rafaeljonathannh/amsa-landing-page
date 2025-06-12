@@ -31,7 +31,7 @@ const VisionMissionSection = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img 
-                  src="/src/assets/images/vision.svg" 
+                  src="/images/vision.svg" 
                   alt="Our Vision" 
                   className="h-60 w-auto" 
                 />
@@ -72,7 +72,7 @@ const VisionMissionSection = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img 
-                  src="/src/assets/images/mission.svg" 
+                  src="/images/mission.svg" 
                   alt="Our Missions" 
                   className="h-20 w-auto" 
                 />
